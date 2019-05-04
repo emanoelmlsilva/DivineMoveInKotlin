@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools"
+              android:orientation="horizontal"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent" android:layout_weight="1">
+
+    <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" app:srcCompat="@drawable/heart" android:id="@+id/heart1"
+            android:layout_weight="1" android:contentDescription="TODO" tools:ignore="VectorDrawableCompat"/>
+    <ImageView
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:layout_height="match_parent" app:srcCompat="@drawable/heart" android:id="@+id/heart2"
+            android:contentDescription="@string/descriptionHeartd2" tools:ignore="VectorDrawableCompat"/>
+    <ImageView
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:layout_height="match_parent" app:srcCompat="@drawable/heart" android:id="@+id/heart3"
+            android:contentDescription="@string/descriptionHeartd1" tools:ignore="VectorDrawableCompat"/>
+
+</LinearLayout>

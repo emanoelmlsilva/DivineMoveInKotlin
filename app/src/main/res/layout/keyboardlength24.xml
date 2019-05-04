@@ -1,0 +1,393 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:background="@drawable/fundokeyboard"
+              android:padding="8dp">
+    <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" android:layout_weight="1">
+
+        <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnAction1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/buttonText"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_weight="1" android:layout_gravity="center"
+                app:strokeColor="@android:color/background_light" android:textColor="@android:color/background_light"
+                android:textColorHint="@color/clickbutton"
+                android:textColorHighlight="@android:color/background_light"
+                android:textColorLink="@android:color/background_light" android:gravity="center"/>
+
+        <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnAction2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="4dp"
+                android:text="@string/buttonText" android:layout_gravity="center"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                app:strokeColor="@android:color/background_light"
+                android:layout_weight="1" android:layout_marginStart="4dp"
+                android:textColor="@android:color/background_light"
+                android:textColorHighlight="@android:color/background_light"
+                android:textColorLink="@android:color/background_light"
+                android:textColorHint="@android:color/background_light" android:gravity="center"/>
+
+        <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnAction3"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="4dp"
+                android:layout_marginTop="0dp"
+                android:layout_gravity="center"
+                android:text="@string/buttonText" android:layout_marginStart="4dp"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                app:strokeColor="@android:color/background_light"
+                android:layout_weight="1" android:textColor="@android:color/background_light"
+                android:textColorHighlight="@android:color/background_light"
+                android:textColorLink="@android:color/background_light"
+                android:textColorHint="@android:color/background_light" android:gravity="center"/>
+
+        <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnAction4"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="4dp"
+                android:layout_marginTop="0dp"
+                android:layout_gravity="center"
+                android:text="@string/buttonText" android:layout_marginStart="4dp"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                app:strokeColor="@android:color/background_light"
+                android:layout_weight="1" android:textColor="@android:color/background_light"
+                android:textColorHighlight="@android:color/background_light"
+                android:textColorLink="@android:color/background_light"
+                android:textColorHint="@android:color/background_light" android:gravity="center"/>
+
+        <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnAction5"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="4dp"
+                android:layout_marginTop="0dp"
+                android:text="@string/buttonText" android:layout_marginStart="4dp"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                app:strokeColor="@android:color/background_light"
+                android:layout_weight="1" android:textColor="@android:color/background_light"
+                android:textColorHighlight="@android:color/background_light"
+                android:textColorLink="@android:color/background_light"
+                android:textColorHint="@android:color/background_light" android:layout_gravity="center"
+                android:gravity="center"/>
+
+        <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnAction6"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="4dp"
+                android:layout_marginTop="0dp"
+                android:text="@string/buttonText" android:layout_marginStart="4dp"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                app:strokeColor="@android:color/background_light"
+                android:layout_weight="1" android:textColor="@android:color/background_light"
+                android:textColorHighlight="@android:color/background_light"
+                android:textColorLink="@android:color/background_light"
+                android:textColorHint="@android:color/background_light" android:layout_gravity="center"
+                android:gravity="center"/>
+
+        <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnAction7"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="4dp"
+                android:layout_marginTop="0dp"
+                android:layout_weight="1"
+                android:text="@string/buttonText" android:layout_marginStart="4dp"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                app:strokeColor="@android:color/background_light" android:textColor="@android:color/background_light"
+                android:textColorHighlight="@android:color/background_light"
+                android:textColorLink="@android:color/background_light"
+                android:textColorHint="@android:color/background_light" android:layout_gravity="center"
+                android:gravity="center"/>
+
+        <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnAction8"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="4dp"
+                android:layout_marginTop="0dp"
+                android:text="@string/buttonText" android:layout_marginStart="4dp"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                app:strokeColor="@android:color/background_light"
+                android:layout_weight="1" android:textColor="@android:color/background_light"
+                android:textColorHighlight="@android:color/background_light"
+                android:textColorLink="@android:color/background_light"
+                android:textColorHint="@android:color/background_light" android:layout_gravity="center"
+                android:gravity="center"/>
+    </LinearLayout>
+
+    <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="4dp" android:layout_weight="1">
+        <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnAction9"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="0dp"
+                android:text="@string/buttonText" style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                app:strokeColor="@android:color/background_light"
+                android:layout_weight="1" android:textColor="@android:color/background_light"
+                android:textColorHighlight="@android:color/background_light"
+                android:textColorLink="@android:color/background_light"
+                android:textColorHint="@android:color/background_light" android:gravity="center"
+                android:layout_gravity="center"/>
+
+        <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnAction10"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="0dp"
+                android:layout_marginLeft="4dp"
+                android:text="@string/buttonText" android:layout_marginStart="4dp"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                app:strokeColor="@android:color/background_light"
+                android:layout_weight="1" android:textColor="@android:color/background_light"
+                android:textColorHighlight="@android:color/background_light"
+                android:textColorLink="@android:color/background_light"
+                android:textColorHint="@android:color/background_light" android:gravity="center"
+                android:layout_gravity="center"/>
+
+        <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnAction11"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="4dp"
+                android:layout_marginTop="0dp"
+                android:text="@string/buttonText" android:layout_marginStart="4dp"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                app:strokeColor="@android:color/background_light"
+                android:layout_weight="1" android:textColor="@android:color/background_light"
+                android:textColorHighlight="@android:color/background_light"
+                android:textColorLink="@android:color/background_light"
+                android:textColorHint="@android:color/background_light" android:gravity="center"
+                android:layout_gravity="center"/>
+
+        <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnAction12"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="4dp"
+                android:layout_marginTop="0dp"
+                android:text="@string/buttonText" android:layout_marginStart="4dp"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                app:strokeColor="@android:color/background_light"
+                android:layout_weight="1" android:textColor="@android:color/background_light"
+                android:textColorHighlight="@android:color/background_light"
+                android:textColorLink="@android:color/background_light"
+                android:textColorHint="@android:color/background_light" android:gravity="center"
+                android:layout_gravity="center"/>
+
+        <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnAction13"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="4dp"
+                android:layout_marginTop="0dp"
+                android:text="@string/buttonText" android:layout_marginStart="4dp"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                app:strokeColor="@android:color/background_light"
+                android:layout_weight="1" android:textColor="@android:color/background_light"
+                android:textColorHighlight="@android:color/background_light"
+                android:textColorLink="@android:color/background_light"
+                android:textColorHint="@android:color/background_light" android:gravity="center"
+                android:layout_gravity="center"/>
+
+        <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnAction14"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="4dp"
+                android:layout_marginTop="0dp"
+                android:text="@string/buttonText" android:layout_marginStart="4dp"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                app:strokeColor="@android:color/background_light"
+                android:layout_weight="1" android:textColor="@android:color/background_light"
+                android:textColorHighlight="@android:color/background_light"
+                android:textColorLink="@android:color/background_light"
+                android:textColorHint="@android:color/background_light" android:gravity="center"
+                android:layout_gravity="center"/>
+
+        <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnAction15"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="4dp"
+                android:layout_marginTop="0dp"
+                android:text="@string/buttonText" android:layout_marginStart="4dp"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                app:strokeColor="@android:color/background_light"
+                android:layout_weight="1" android:textColor="@android:color/background_light"
+                android:textColorHighlight="@android:color/background_light"
+                android:textColorLink="@android:color/background_light"
+                android:textColorHint="@android:color/background_light" android:gravity="center"
+                android:layout_gravity="center"/>
+
+        <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnAction16"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="4dp"
+                android:layout_marginTop="0dp"
+                android:text="@string/buttonText" android:layout_marginStart="4dp"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                app:strokeColor="@android:color/background_light"
+                android:layout_weight="1" android:textColor="@android:color/background_light"
+                android:textColorHighlight="@android:color/background_light"
+                android:textColorLink="@android:color/background_light"
+                android:textColorHint="@android:color/background_light" android:gravity="center"
+                android:layout_gravity="center"/>
+    </LinearLayout>
+
+    <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="4dp" android:layout_weight="1">
+        <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnAction17"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="0dp"
+                android:text="@string/buttonText" style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                app:strokeColor="@android:color/background_light"
+                android:layout_weight="1" android:textColor="@android:color/background_light"
+                android:textColorHighlight="@android:color/background_light"
+                android:textColorLink="@android:color/background_light"
+                android:textColorHint="@android:color/background_light" android:gravity="center"
+                android:layout_gravity="center"/>
+
+        <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnAction18"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="0dp"
+                android:layout_marginLeft="4dp"
+                android:text="@string/buttonText" android:layout_marginStart="4dp"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                app:strokeColor="@android:color/background_light"
+                android:layout_weight="1" android:textColor="@android:color/background_light"
+                android:textColorHighlight="@android:color/background_light"
+                android:textColorLink="@android:color/background_light"
+                android:textColorHint="@android:color/background_light" android:gravity="center"
+                android:layout_gravity="center"/>
+
+        <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnAction19"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="4dp"
+                android:layout_marginTop="0dp"
+                android:text="@string/buttonText" android:layout_marginStart="4dp"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                app:strokeColor="@android:color/background_light"
+                android:layout_weight="1" android:textColor="@android:color/background_light"
+                android:textColorHighlight="@android:color/background_light"
+                android:textColorLink="@android:color/background_light"
+                android:textColorHint="@android:color/background_light" android:gravity="center"
+                android:layout_gravity="center"/>
+
+        <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnAction20"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="4dp"
+                android:layout_marginTop="0dp"
+                android:text="@string/buttonText" android:layout_marginStart="4dp"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                app:strokeColor="@android:color/background_light"
+                android:layout_weight="1" android:textColor="@android:color/background_light"
+                android:textColorHighlight="@android:color/background_light"
+                android:textColorLink="@android:color/background_light"
+                android:textColorHint="@android:color/background_light" android:gravity="center"
+                android:layout_gravity="center"/>
+
+        <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnAction21"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="4dp"
+                android:layout_marginTop="0dp"
+                android:text="@string/buttonText" android:layout_marginStart="4dp"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                app:strokeColor="@android:color/background_light"
+                android:layout_weight="1" android:textColor="@android:color/background_light"
+                android:textColorHighlight="@android:color/background_light"
+                android:textColorLink="@android:color/background_light"
+                android:textColorHint="@android:color/background_light" android:gravity="center"
+                android:layout_gravity="center"/>
+
+        <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnAction22"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="4dp"
+                android:layout_marginTop="0dp"
+                android:text="@string/buttonText" android:layout_marginStart="4dp"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                app:strokeColor="@android:color/background_light"
+                android:layout_weight="1" android:textColor="@android:color/background_light"
+                android:textColorHighlight="@android:color/background_light"
+                android:textColorLink="@android:color/background_light"
+                android:textColorHint="@android:color/background_light" android:gravity="center"
+                android:layout_gravity="center"/>
+
+        <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnAction23"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="4dp"
+                android:layout_marginTop="0dp"
+                android:text="@string/buttonText" android:layout_marginStart="4dp"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                app:strokeColor="@android:color/background_light"
+                android:layout_weight="1" android:textColor="@android:color/background_light"
+                android:textColorHighlight="@android:color/background_light"
+                android:textColorLink="@android:color/background_light"
+                android:textColorHint="@android:color/background_light" android:gravity="center"
+                android:layout_gravity="center"/>
+
+        <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnAction24"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="4dp"
+                android:layout_marginTop="0dp"
+                android:text="@string/buttonText" android:layout_marginStart="4dp"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                app:strokeColor="@android:color/background_light"
+                android:layout_weight="1" android:textColor="@android:color/background_light"
+                android:textColorHighlight="@android:color/background_light"
+                android:textColorLink="@android:color/background_light"
+                android:textColorHint="@android:color/background_light" android:gravity="center"
+                android:layout_gravity="center"/>
+    </LinearLayout>
+
+    <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="4dp"
+            android:layout_marginStart="324dp" android:layout_marginLeft="162dp" android:layout_weight="1">
+        <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:srcCompat="@drawable/ic_backspace_black_24dp"
+                android:id="@+id/imageDelete" tools:ignore="VectorDrawableCompat"
+                android:contentDescription="TODO" android:layout_weight="1" android:layout_gravity="center"/>
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Divine</string>
+    <string name="title_activity_play">PlayActivity</string>
+    <string name="descriptionHeartd1">heart1</string>
+    <string name="descriptionHeartd2">heart2</string>
+    <string name="descriptionHeartd3">heart3</string>
+    <string name="descriptionImageMove">imageMove</string>
+    <string name="buttonText">T</string>
+</resources>
