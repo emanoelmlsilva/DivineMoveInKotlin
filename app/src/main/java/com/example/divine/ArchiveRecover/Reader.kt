@@ -9,20 +9,17 @@ import java.io.InputStream
 
 class Reader{
 
-    lateinit var assetManagerList: AssetManager
-    lateinit var inputStream: InputStream
-    var arrayChose = mutableListOf<DivineImageWord>()
-
     fun recoverDivine(myContext: Context):MutableList<DivineImageWord>{ // usar o try
-        this.assetManagerList = myContext.assets
+        val arrayChose = mutableListOf<DivineImageWord>()
+        val assetManagerList: AssetManager = myContext.assets
         val recoverDivineList: String
         var divineimage: DivineImageWord
         try {
-            this.inputStream = this.assetManagerList.open(directory() + fileName())
-            val size: Int = this.inputStream.available()
+            val inputStream: InputStream = assetManagerList.open(directory() + fileName())
+            val size: Int = inputStream.available()
             val buffer = ByteArray(size)
-            this.inputStream.read(buffer)
-            this.inputStream.close()
+            inputStream.read(buffer)
+            inputStream.close()
             recoverDivineList = String(buffer)
             val arrayDivine: List<String> = recoverDivineList.split("\n")
             for (stringDivine in arrayDivine) {
@@ -31,7 +28,7 @@ class Reader{
                 var resId: Int = myContext.resources.getIdentifier(image, "drawable", myContext.packageName)
                 if (resId == 0) {
                     println("erro drawable não exites");
-                } else if (!searchForDivineIquals(move, resId)) {
+                } else if (!searchForDivineIquals(move, resId,arrayChose)) {
                     divineimage = DivineImageWord(resId, move)
                     arrayChose.add(divineimage)
                 }
@@ -39,12 +36,12 @@ class Reader{
         }catch(erro: IOException){
             Log.i("exception","não foi possivel emcontar o diretorio/archive")
         }
-        return this.arrayChose
+        return arrayChose
     }
 
     //    procura se existe dois filmes iguais
-    fun searchForDivineIquals(name: String,imageAtual: Int):Boolean{
-        for(divineImageWord in this.arrayChose){
+    private fun searchForDivineIquals(name: String,imageAtual: Int,myArrayChose: List<DivineImageWord>):Boolean{
+        for(divineImageWord in myArrayChose){
             if(divineImageWord.word.equals(name) || divineImageWord.image == imageAtual){
                 return true
             }
@@ -53,12 +50,12 @@ class Reader{
     }
 
     //    retornar o diretorio
-    fun directory():String{
+    private fun directory():String{
         return "archive/"
     }
 
     //    retorna o nome do arquivo
-    fun fileName(): String{
+    private fun fileName(): String{
         return "arquivosImageString"
     }
 }
