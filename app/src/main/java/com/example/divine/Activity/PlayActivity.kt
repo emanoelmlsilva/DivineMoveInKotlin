@@ -28,7 +28,7 @@ class PlayActivity : AppCompatActivity(), View.OnClickListener{
     var actualCorrect: Int = 0
     val buttonsSelection = IntArray(23)
     val splash_time_out: Long = 1000
-    val words = userWord?.choseWordKeyboard()
+    var words:CharArray? = null
     var alreadyChecked: Boolean? = null
     var chronometer: MyChronometer? = null
     var alertDialog: MyDialogMessage? = null
@@ -121,6 +121,7 @@ class PlayActivity : AppCompatActivity(), View.OnClickListener{
         this.userWord?.choseWordImage()
         this.textNameMove.text = this.userWord!!.mountLines()
         this.textContPoint.text = "${this.actualCorrect}/${this.totalCorrect}"
+        words = userWord?.choseWordKeyboard()
         this.imageMoveAtual.setImageResource(this.userWord?.image!!)
         this.setButtons()
     }
@@ -204,8 +205,8 @@ class PlayActivity : AppCompatActivity(), View.OnClickListener{
     }
 
     fun startTime(){
-        this.chronometer!!.startChronometer()
-        this.chronometer!!.finishTime(object : MyChronometer.TimeOver {
+        this.chronometer?.startChronometer()
+        this.chronometer?.finishTime(object : MyChronometer.TimeOver {
             override fun finishOver() {
                 nextDivine()
                 loseLife()
@@ -216,9 +217,9 @@ class PlayActivity : AppCompatActivity(), View.OnClickListener{
     fun resetTime(){
         finishPlay()
         if(this.contLoseLif > 0){
-            this.chronometer!!.resetTime()
+            this.chronometer?.resetTime()
         }else{
-            this.chronometer!!.stopAndResetChronometer()
+            this.chronometer?.stopAndResetChronometer()
         }
     }
 
@@ -232,8 +233,8 @@ class PlayActivity : AppCompatActivity(), View.OnClickListener{
 
     fun finishPlay(){
         if(this.contLoseLif == 0){
-            this.chronometer!!.startChronometer()
-            this.alertDialog!!.message("jogo finalizado",object : MyDialogMessage.BackToMenu {
+            this.chronometer?.startChronometer()
+            this.alertDialog?.message("jogo finalizado",object : MyDialogMessage.BackToMenu {
                 override fun popBack() {
                     startActivity(backMainIntent)
                 }
@@ -243,7 +244,7 @@ class PlayActivity : AppCompatActivity(), View.OnClickListener{
 
     fun finishAllRandom(){
         if(this.userWord!!.allRandom()) {
-            this.alertDialog!!.message("todas as imagens foram utilizadas", object : MyDialogMessage.BackToMenu {
+            this.alertDialog?.message("todas as imagens foram utilizadas", object : MyDialogMessage.BackToMenu {
                 override fun popBack() {
                     startActivity(backMainIntent)
                 }
