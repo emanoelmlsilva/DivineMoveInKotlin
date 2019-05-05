@@ -81,14 +81,14 @@ class PlayActivity : AppCompatActivity(), View.OnClickListener{
     }
 
     fun setButtons(){
-        for(i in 0..this.listButton!!.size-1){
+        for(i in 0 until this.listButton!!.size){
             this.listButton!![i].setText(this.words?.get(i)?.toString())
         }
     }
 
     fun allActionButtonDeleteShow(){
 
-        for(i in 0..this.listButton!!.size-1){
+        for(i in 0 until this.listButton!!.size){
 
             this.listButton?.get(i)?.let { setOnClick(it) }
 
@@ -129,7 +129,7 @@ class PlayActivity : AppCompatActivity(), View.OnClickListener{
     fun takesWordClickButton(word: Char,button: Button){
 
         var newWordLine: CharArray = this.textNameMove.text.toString().toCharArray()
-        for(i in 0..this.userWord!!.move.length-1){
+        for(i in 0 until this.userWord!!.move.length){
             if(newWordLine[i] == '-'){
                 newWordLine[i] = word
                 this.textNameMove.setText(String(newWordLine).toUpperCase())
@@ -199,7 +199,7 @@ class PlayActivity : AppCompatActivity(), View.OnClickListener{
     }
 
     fun resetButton(){
-        for(i in 0..this.listButton!!.size-1){
+        for(i in 0 until this.listButton!!.size){
             this.listButton?.get(i)!!.visibility = View.VISIBLE
         }
     }
