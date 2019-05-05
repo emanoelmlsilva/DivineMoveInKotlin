@@ -18,7 +18,7 @@ class MainActivity : AppCompatActivity() {
 
         choseWord = ChoseWord(this)
         btn_films.setOnClickListener(View.OnClickListener {
-            var intent: Intent = Intent(this,PlayActivity::class.java)
+            val intent = Intent(this,PlayActivity::class.java)
             startActivity(intent)
         })
 
