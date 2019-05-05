@@ -64,7 +64,7 @@
             android:layout_marginRight="8dp" android:textStyle="bold"
             android:layout_marginBottom="16dp"
             app:layout_constraintBottom_toTopOf="@+id/include" android:textColor="@android:color/background_light"
-            android:textColorHint="@android:color/background_light"/>
+            android:textColorHint="@android:color/background_light" android:gravity="center"/>
     <include
             layout="@layout/keyboardlength24"
             android:layout_width="wrap_content"
