@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
+import android.util.Log
 import android.view.View
 import android.widget.*
 import com.example.divine.DialogMessage.MyDialogMessage
@@ -132,23 +133,27 @@ class PlayActivity : AppCompatActivity(), View.OnClickListener{
 
         var newWordLine: CharArray = this.textNameMove.text.toString().toCharArray()
         for(i in 0 until this.userWord!!.move.length){
-            if(newWordLine[i] == '-'){
-                newWordLine[i] = word
+            if(newWordLine[i] == '-' || (newWordLine[i] == ' ' && newWordLine[i+1] == '-')){
+                if(newWordLine[i] == ' ') newWordLine[i+1] = word else newWordLine[i] = word
                 this.textNameMove.setText(String(newWordLine).toUpperCase())
-                this.positionLastWord++
+                if(newWordLine[i] == ' ') this.positionLastWord += 2 else this.positionLastWord++
                 buttonVisibilite(button)
                 break
             }
         }
+
     }
 
     fun deleteSpaceClickButton(){
+
         var newWordLine = this.textNameMove.text.toString().toCharArray()
-        if(this.positionLastWord > 0){
+        if(this.positionLastWord > 0 && newWordLine[positionLastWord-1] != ' '){
             newWordLine[--this.positionLastWord] = '-'
             buttonVisibilite(takeesButtonLastSelection())
+        }else if(this.positionLastWord > 0 && newWordLine[positionLastWord-1] == ' '){
+            this.positionLastWord--
         }
-        if(this.positionLastWord == 0 && newWordLine[0] != '-'){
+        if(this.positionLastWord == 0 && (newWordLine[0] != '-' && newWordLine[positionLastWord] != ' ')){
             newWordLine[0] = '-'
             this.positionLastWord = 0
         }
