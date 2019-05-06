@@ -9,7 +9,9 @@
     <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" android:layout_weight="1">
+            android:layout_height="match_parent"
+            android:background="@color/backgroundLinearLayoutInterno"
+            android:layout_weight="1">
 
         <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnAction1"
@@ -132,6 +134,7 @@
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:background="@color/backgroundLinearLayoutInterno"
             android:layout_marginTop="4dp" android:layout_weight="1">
         <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnAction9"
@@ -256,6 +259,7 @@
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:background="@color/backgroundLinearLayoutInterno"
             android:layout_marginTop="4dp" android:layout_weight="1">
         <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnAction17"
@@ -381,10 +385,12 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginTop="4dp"
+            android:background="@color/backgroundLinearLayoutInterno"
             android:layout_marginStart="324dp" android:layout_marginLeft="162dp" android:layout_weight="1">
         <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:background="@color/backgroundLinearLayoutInterno"
                 app:srcCompat="@drawable/ic_backspace_black_24dp"
                 android:id="@+id/imageDelete" tools:ignore="VectorDrawableCompat"
                 android:contentDescription="TODO" android:layout_weight="1" android:layout_gravity="center"/>
