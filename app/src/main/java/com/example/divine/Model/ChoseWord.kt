@@ -26,16 +26,21 @@ class ChoseWord(var myContext: Context)  {
 
 //  forma uma string com - do mesmo tamanho da palavra
     fun mountLines():String{
-        var lines: String = ""
+        var lines = ""
         for(i in 0..move.length-1){
-            lines += "-"
-        }
+            if(move[i] == ' '){
+                lines += " "
+            }else{
+                lines += "-"
+            }
+        }     
         return lines
     }
 
 //    verificar palavras iguais
     fun checkWordEquals(indexNameCheck:Int,wordChecked:String):Boolean{
         val nameMove: String = this.arrayChose.get(indexNameCheck).word.toLowerCase()
+        Log.i("comparando"," namemove = $nameMove wordchech = $wordChecked")
         return nameMove.toLowerCase().equals(wordChecked.toLowerCase())
     }
 
@@ -48,7 +53,7 @@ class ChoseWord(var myContext: Context)  {
             if(move[i] != ' '){
                 arrayWordsort[i] = move.get(i)
             }else{
-                arrayWordsort[i] = this.listWordChar[(1 until 26).random()]
+                arrayWordsort[i] = this.listWordChar[(0 until 25).random()]
             }
         }
 
@@ -94,7 +99,6 @@ class ChoseWord(var myContext: Context)  {
                 }
             }
             if(this.listRandom!!.size < this.arrayChose.size){
-                Log.i("botao","cadastrando random"+this.listRandom.size)
                 this.listRandom!!.add(random)
             }
         }
