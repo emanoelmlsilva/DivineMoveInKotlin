@@ -13,6 +13,7 @@ import com.example.divine.Chronometer.MyChronometer
 import kotlinx.android.synthetic.main.activity_play.*
 import kotlinx.android.synthetic.main.heartcont.*
 import kotlinx.android.synthetic.main.keyboardlength24.*
+import kotlin.random.Random
 
 class PlayActivity : AppCompatActivity(), View.OnClickListener{
 
@@ -82,7 +83,8 @@ class PlayActivity : AppCompatActivity(), View.OnClickListener{
 
     fun setButtons(){
         for(i in 0 until this.listButton!!.size){
-            this.listButton!![i].setText(this.words?.get(i)?.toString())
+
+            this.listButton!![i].text = this.words?.get(i)?.toString()
         }
     }
 
