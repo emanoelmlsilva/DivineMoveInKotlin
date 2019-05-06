@@ -22,6 +22,8 @@ class ChoseWord(var myContext: Context)  {
         lengthKeyboard = 24
     }
 
+    fun getArrayKeyBoard(): CharArray = listWordChar
+
 //  forma uma string com - do mesmo tamanho da palavra
     fun mountLines():String{
         var lines: String = ""
@@ -40,11 +42,13 @@ class ChoseWord(var myContext: Context)  {
 
 //    verificar embaralha palavra do teclado
     fun choseWordKeyboard():CharArray {
-        var cont: Int = 0
+
         val arrayWordsort = CharArray(lengthKeyboard)
         for(i in 0..move.length-1){
             if(move[i] != ' '){
                 arrayWordsort[i] = move.get(i)
+            }else{
+                arrayWordsort[i] = this.listWordChar[(1 until 26).random()]
             }
         }
 
