@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#008577</color>
-    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorPrimaty">@android:color/black</color>
+    <color name="colorPrimaryDark">#81b9bf</color>
     <color name="colorAccent">#0C090A</color>
     <color name="fundokeyboard">#9B000000</color>
     <color name="borda">#89000000</color>
     <color name="corbutton">#4DD0E1</color>
-    <color name="clickbutton">#009FAF</color>
+    <color name="clickbutton">#AF0000</color>
+    <color name="background">#e5ffff</color>
+    <color name="backgroundLinearLayoutInterno">#81b9bf</color>
+    <color name="colorText">#B2EBF2</color>
 </resources>
