@@ -15,7 +15,7 @@
                 android:label="@string/title_activity_play"
                 android:theme="@style/MyStyle">
         </activity>
-        <activity android:name=".Activity.MainActivity">
+        <activity android:name=".Activity.InitGameActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 

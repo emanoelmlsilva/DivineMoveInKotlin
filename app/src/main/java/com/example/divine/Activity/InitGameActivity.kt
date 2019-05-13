@@ -8,7 +8,7 @@ import com.example.divine.Model.ChoseWord
 import com.example.divine.R
 import kotlinx.android.synthetic.main.activity_main.*
 
-class MainActivity : AppCompatActivity() {
+class InitGameActivity : AppCompatActivity() {
 
     var choseWord: ChoseWord? = null
 

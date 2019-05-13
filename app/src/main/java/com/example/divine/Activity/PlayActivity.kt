@@ -4,7 +4,6 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
-import android.util.Log
 import android.view.View
 import android.widget.*
 import com.example.divine.DialogMessage.MyDialogMessage
@@ -14,7 +13,6 @@ import com.example.divine.Chronometer.MyChronometer
 import kotlinx.android.synthetic.main.activity_play.*
 import kotlinx.android.synthetic.main.heartcont.*
 import kotlinx.android.synthetic.main.keyboardlength24.*
-import kotlin.random.Random
 
 class PlayActivity : AppCompatActivity(), View.OnClickListener{
 
@@ -49,7 +47,7 @@ class PlayActivity : AppCompatActivity(), View.OnClickListener{
     fun init(){
 
         this.contLoseLif = 3
-        this.backMainIntent = Intent(this,MainActivity::class.java)
+        this.backMainIntent = Intent(this,InitGameActivity::class.java)
         instanceButtons()
         allActionButtonDeleteShow()
     }
