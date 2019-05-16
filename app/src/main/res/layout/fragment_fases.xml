@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             tools:context=".Fragments.FasesFragment" android:layout_weight="1">
+    <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" android:layout_weight="1">
+            <ImageButton
+                    android:src="@drawable/numeric_1_box"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" android:id="@+id/btn_fase1" android:layout_weight="1"
+                    android:tint="@color/corbutton"/>
+            <ImageButton
+                    android:src="@drawable/numeric_2_box"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" android:id="@+id/btn_fase2" android:layout_weight="1"
+                    android:tint="@color/colorPrimaryDark"/>
+            <ImageButton
+                    android:src="@drawable/numeric_3_box"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" android:id="@+id/btn_fase3" android:layout_weight="1"
+                    android:tint="@color/colorPrimaryDark"/>
+        </LinearLayout>
+        <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" android:layout_weight="1">
+            <ImageButton
+                    android:src="@android:drawable/btn_dialog"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" android:id="@+id/imageButton2" android:layout_weight="1"
+            />
+            <ImageButton
+                    android:src="@android:drawable/btn_dialog"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" android:id="@+id/imageButton3" android:layout_weight="1"/>
+            <ImageButton
+                    android:src="@android:drawable/btn_dialog"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" android:id="@+id/imageButton4" android:layout_weight="1"/>
+        </LinearLayout>
+        <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" android:layout_weight="1">
+        </LinearLayout>
+        <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" android:layout_weight="1">
+        </LinearLayout>
+    </LinearLayout>
+</FrameLayout>
