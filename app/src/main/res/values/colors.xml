@@ -1,13 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimaty">@android:color/black</color>
-    <color name="colorPrimaryDark">#81b9bf</color>
     <color name="colorAccent">#0C090A</color>
     <color name="fundokeyboard">#9B000000</color>
     <color name="borda">#89000000</color>
-    <color name="corbutton">#4DD0E1</color>
+    <color name="corbutton">#81b9bf</color>
     <color name="clickbutton">#AF0000</color>
-    <color name="background">#e5ffff</color>
+    <color name="background">#E5FFFF</color>
     <color name="backgroundLinearLayoutInterno">#81b9bf</color>
     <color name="colorText">#B2EBF2</color>
+    <color name="colorButtonNavView">#484848</color>
+
+    <color name="colorPrimaty">#b2ebf2</color>
+    <color name="colorPrimaryLight">#e5ffff</color>
+    <color name="colorPrimaryDark">#81b9bf</color>
+    <color name="colorSecondary">#212121</color>
+    <color name="colorSecondaryLight">#484848</color>
+    <color name="colorSecondaryDark">#000000</color>
+    <color name="colorPrimaryText">#000000</color>
+    <color name="colorSecondaryText">#ffffff</color>
 </resources>
