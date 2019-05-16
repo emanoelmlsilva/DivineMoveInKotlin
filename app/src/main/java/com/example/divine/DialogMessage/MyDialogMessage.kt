@@ -27,6 +27,16 @@ class MyDialogMessage(myContext: Context, idStyle: Int) {
 
     }
 
+    fun messageCheckVictor(title: String,id: Int){
+        builder.setTitle(title)
+//        configurar cancelamento
+        builder.setCancelable(true)
+//        configurar icone
+        builder.setIcon(id)
+
+        builder.create()
+        builder.show()
+    }
     interface BackToMenu{
         fun popBack()
     }
