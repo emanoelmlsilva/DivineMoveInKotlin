@@ -7,15 +7,23 @@ import com.example.divine.Model.DivineImageWord
 import java.io.IOException
 import java.io.InputStream
 
-class Reader{
+class Reader(){
 
-    fun recoverDivine(myContext: Context):MutableList<DivineImageWord>{ // usar o try
+    companion object{
+        var fileName: String = "arquivosImageString"
+    }
+
+    fun setFile(file: String){
+        fileName = file
+    }
+
+    fun recoverDivine(myContext: Context):MutableList<DivineImageWord>{
         val arrayChose = mutableListOf<DivineImageWord>()
         val assetManagerList: AssetManager = myContext.assets
         val recoverDivineList: String
         var divineimage: DivineImageWord
         try {
-            val inputStream: InputStream = assetManagerList.open(directory() + fileName())
+            val inputStream: InputStream = assetManagerList.open(directory() + fileNameArquive())
             val size: Int = inputStream.available()
             val buffer = ByteArray(size)
             inputStream.read(buffer)
@@ -55,7 +63,7 @@ class Reader{
     }
 
     //    retorna o nome do arquivo
-    private fun fileName(): String{
-        return "arquivosImageString"
+    fun fileNameArquive(): String{
+        return fileName
     }
 }
