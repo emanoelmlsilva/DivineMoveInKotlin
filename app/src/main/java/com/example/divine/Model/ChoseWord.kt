@@ -8,15 +8,16 @@ import kotlin.random.Random
 class ChoseWord(var myContext: Context)  {
 
     val listWordChar:CharArray
-    val arrayChose: MutableList<DivineImageWord>
+    var arrayChose: MutableList<DivineImageWord>
     var image: Int? = null
     var random: Int = 0
     val lengthKeyboard: Int
     var move:String = ""
     val listRandom = ArrayList<Int>()
-    var readerAssets = Reader()
+    var readerAssets: Reader
 
     init{
+        readerAssets = Reader()
         this.arrayChose = readerAssets.recoverDivine(myContext)
         listWordChar = charArrayOf('a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','w','x','y','z')
         lengthKeyboard = 24
@@ -40,7 +41,6 @@ class ChoseWord(var myContext: Context)  {
 //    verificar palavras iguais
     fun checkWordEquals(indexNameCheck:Int,wordChecked:String):Boolean{
         val nameMove: String = this.arrayChose.get(indexNameCheck).word.toLowerCase()
-        Log.i("comparando"," namemove = $nameMove wordchech = $wordChecked")
         return nameMove.toLowerCase().equals(wordChecked.toLowerCase())
     }
 
@@ -128,6 +128,10 @@ class ChoseWord(var myContext: Context)  {
 //    retornar o total de DivineImageWord cadastrados
     fun size(): Int{
         return this.arrayChose.size
+    }
+
+    interface TakeFile{
+        fun getFile():String
     }
 
 }
