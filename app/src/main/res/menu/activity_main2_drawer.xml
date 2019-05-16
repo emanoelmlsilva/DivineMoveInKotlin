@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:tools="http://schemas.android.com/tools"
+      tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+                android:id="@+id/nav_home"
+                android:icon="@drawable/ic_home_black_24dp"
+                android:title="@string/menu_home"/>
+        <item
+                android:id="@+id/nav_fases"
+                android:icon="@drawable/ic_videogame_asset_black_24dp"
+                android:title="@string/menu_fases"/>
+        <item
+                android:id="@+id/nav_recorde"
+                android:icon="@drawable/star_box"
+                android:title="@string/menu_recorde"/>
+        <item
+                android:id="@+id/nav_sobre"
+                android:icon="@drawable/ic_info_black_24dp"
+                android:title="@string/menu_sobre"/>
+    </group>
+
+</menu>
