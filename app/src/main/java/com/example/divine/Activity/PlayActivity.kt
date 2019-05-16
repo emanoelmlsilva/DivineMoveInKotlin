@@ -14,7 +14,7 @@ import kotlinx.android.synthetic.main.activity_play.*
 import kotlinx.android.synthetic.main.heartcont.*
 import kotlinx.android.synthetic.main.keyboardlength24.*
 
-class PlayActivity : AppCompatActivity(), View.OnClickListener{
+class PlayActivity: AppCompatActivity(), View.OnClickListener{
 
     var userWord: ChoseWord? = null
     var listButton: ArrayList<Button>? = null
@@ -35,7 +35,6 @@ class PlayActivity : AppCompatActivity(), View.OnClickListener{
     var backMainIntent: Intent? = null
 
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_play)
@@ -47,7 +46,7 @@ class PlayActivity : AppCompatActivity(), View.OnClickListener{
     fun init(){
 
         this.contLoseLif = 3
-        this.backMainIntent = Intent(this,InitGameActivity::class.java)
+        this.backMainIntent = Intent(this,MainNavActivity::class.java)
         instanceButtons()
         allActionButtonDeleteShow()
     }
@@ -73,6 +72,7 @@ class PlayActivity : AppCompatActivity(), View.OnClickListener{
         initButtons()
         setTextAll()
     }
+
 
     fun initButtons(){
         for(i in 0..23){
@@ -178,11 +178,11 @@ class PlayActivity : AppCompatActivity(), View.OnClickListener{
     fun checkNameEqualsImage(){
         if(this.positionLastWord == this.userWord!!.move.length && !this.alreadyChecked!!){
             if(this.userWord!!.checkWordEquals(this.userWord!!.getPositionImageArray(this.userWord!!.image!!),this.textNameMove.text.toString())){
-                Toast.makeText(applicationContext,"certa",Toast.LENGTH_SHORT).show()
+                this.alertDialog!!.messageCheckVictor("Resposta Certa",R.drawable.death_star)
                 this.actualCorrect++
                 nextDivine()
             }else{
-                Toast.makeText(applicationContext,"errado",Toast.LENGTH_SHORT).show()
+                this.alertDialog!!.messageCheckVictor("Resposta Errada",R.drawable.death_star_variant)
                 this.alreadyChecked = true
             }
         }
