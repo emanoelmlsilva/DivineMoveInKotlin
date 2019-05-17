@@ -15,6 +15,7 @@ class ChoseWord(var myContext: Context)  {
     var move:String = ""
     val listRandom = ArrayList<Int>()
     var readerAssets: Reader
+    var level: Int = 0
 
     init{
         readerAssets = Reader()
@@ -86,6 +87,7 @@ class ChoseWord(var myContext: Context)  {
         }else{
             image = arrayChose.get(random).image
             move = arrayChose.get(random).word
+            level = arrayChose.get(random).level
         }
     }
 
