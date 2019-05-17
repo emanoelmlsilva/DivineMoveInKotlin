@@ -10,14 +10,15 @@
             android:supportsRtl="true"
             android:theme="@style/MyStyle"
             tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".Activity.SobreActivity">
+        <activity android:name=".Activity.SobreActivity" android:screenOrientation="portrait">
         </activity>
         <activity
                 android:name=".Activity.PlayActivity"
                 android:label="@string/title_activity_play"
-                android:theme="@style/MyStyle">
+                android:theme="@style/MyStyle"
+                android:screenOrientation="portrait">
         </activity>
-        <activity android:name=".Activity.MainNavActivity">
+        <activity android:name=".Activity.MainNavActivity" android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
