@@ -49,6 +49,10 @@ class MyChronometer(viewChronometer: View) {
         startChronometer()
     }
 
+    fun getTimefinal(): Int{
+        return (SystemClock.elapsedRealtime() - cronometro.base).toInt()
+    }
+
     interface TimeOver{
         fun finishOver()
     }
