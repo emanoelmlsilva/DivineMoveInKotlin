@@ -30,7 +30,7 @@
                     android:src="@drawable/alpha_a_box"
                     android:layout_width="300dp"
                     android:layout_height="100dp"
-                    android:id="@+id/imageButton" android:layout_weight="1"/>
+                    android:id="@+id/btn_records" android:layout_weight="1"/>
         </LinearLayout>
     </LinearLayout>
 
