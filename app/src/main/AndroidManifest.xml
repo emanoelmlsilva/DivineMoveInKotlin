@@ -10,12 +10,14 @@
             android:supportsRtl="true"
             android:theme="@style/MyStyle"
             tools:ignore="GoogleAppIndexingWarning">
+        <activity android:name=".Activity.SobreActivity">
+        </activity>
         <activity
                 android:name=".Activity.PlayActivity"
                 android:label="@string/title_activity_play"
                 android:theme="@style/MyStyle">
         </activity>
-        <activity android:name=".Activity.InitGameActivity">
+        <activity android:name=".Activity.MainNavActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
