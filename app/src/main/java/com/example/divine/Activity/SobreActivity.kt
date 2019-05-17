@@ -21,8 +21,8 @@ class SobreActivity : AppCompatActivity() {
             .setDescription(description)
             .addGroup("Fale Conosco")
             .addEmail("emanoel.silva@dce.ufpb.br","Envie um e-mail")
-            .addGroup("Rede Social")
-            .addGitHub("emanoelmlsilva?tab=repositories","Outros Prjetos")
+            .addGroup("Outros Projetos")
+            .addGitHub("emanoelmlsilva?tab=repositories","GitHub")
             .create()
         setContentView(sobre)
     }
