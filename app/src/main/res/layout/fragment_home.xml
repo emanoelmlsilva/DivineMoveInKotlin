@@ -18,7 +18,7 @@
                 app:layout_constraintTop_toTopOf="parent"/>
         <ImageButton
                 android:layout_width="0dp"
-                android:id="@+id/btn_game"
+                android:id="@+id/btn_gameStart"
                 android:src="@drawable/gamepad_variant" app:layout_constraintStart_toStartOf="parent"
                 android:layout_marginLeft="16dp" android:layout_marginStart="16dp"
                 app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="16dp"
