@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Divine</string>
+    <string name="app_name">GuessFast</string>
     <string name="title_activity_play">PlayActivity</string>
     <string name="descriptionHeartd1">heart1</string>
     <string name="descriptionHeartd2">heart2</string>
