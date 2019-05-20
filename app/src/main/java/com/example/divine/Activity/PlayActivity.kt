@@ -10,6 +10,7 @@ import com.example.divine.DialogMessage.MyDialogMessage
 import com.example.divine.Model.ChoseWord
 import com.example.divine.R
 import com.example.divine.Chronometer.MyChronometer
+import com.example.divine.Model.CounterScore
 import kotlinx.android.synthetic.main.activity_play.*
 import kotlinx.android.synthetic.main.heartcont.*
 import kotlinx.android.synthetic.main.keyboardlength24.*
@@ -34,6 +35,8 @@ class PlayActivity: AppCompatActivity(), View.OnClickListener{
     var alertDialog: MyDialogMessage? = null
     var backMainIntent: Intent? = null
 
+    var contScore: CounterScore = CounterScore(1)
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -44,7 +47,6 @@ class PlayActivity: AppCompatActivity(), View.OnClickListener{
     }
 
     fun init(){
-
         this.contLoseLif = 3
         this.backMainIntent = Intent(this,MainNavActivity::class.java)
         instanceButtons()
@@ -179,6 +181,8 @@ class PlayActivity: AppCompatActivity(), View.OnClickListener{
         if(this.positionLastWord == this.userWord!!.move.length && !this.alreadyChecked!!){
             if(this.userWord!!.checkWordEquals(this.userWord!!.getPositionImageArray(this.userWord!!.image!!),this.textNameMove.text.toString())){
                 this.alertDialog!!.messageCheckVictor("Resposta Certa",R.drawable.death_star)
+                this.contScore.changeLevel(this.userWord!!.level)
+                this.contScore.calculateScore(this.chronometer?.getTimefinal()!!)
                 this.actualCorrect++
                 nextDivine()
             }else{
