@@ -9,6 +9,7 @@ class MyChronometer(viewChronometer: View) {
 
     var cronometro: Chronometer;
     var timer: Long = 0
+    val TIME_FINAL = 45000
     var timeFinish: Boolean = false
 
     init{
@@ -37,7 +38,7 @@ class MyChronometer(viewChronometer: View) {
     fun finishTime(timeEnd:TimeOver){
         cronometro.setOnChronometerTickListener {
             timer = SystemClock.elapsedRealtime() - cronometro.base
-            timeFinish = timer >= 30000
+            timeFinish = timer >= TIME_FINAL
             if(timeFinish){
                 timeEnd.finishOver()
             }
