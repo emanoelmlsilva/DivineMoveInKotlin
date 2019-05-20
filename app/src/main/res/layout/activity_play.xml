@@ -10,15 +10,17 @@
     <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="25dp" app:layout_constraintEnd_toEndOf="parent"
+            android:layout_height="wrap_content" app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent"
             android:layout_marginBottom="8dp" app:layout_constraintBottom_toTopOf="@+id/imageMoveAtual"
-            android:layout_marginTop="16dp" android:layout_marginRight="2dp" android:layout_marginEnd="2dp"
-            app:layout_constraintVertical_bias="0.95" android:id="@+id/linearLayout2">
+            android:layout_marginTop="16dp"
+            app:layout_constraintVertical_bias="0.95" android:id="@+id/linearLayout2"
+            android:background="@color/backgroundLinearLayoutInterno">
         <include
                 layout="@layout/heartcont"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" android:layout_weight="1"/>
+                android:layout_height="match_parent" android:layout_weight="1" android:paddingTop="4dp"
+                android:paddingBottom="4dp"/>
 
         <Chronometer
                 android:id="@+id/cronometro"
@@ -27,7 +29,8 @@
                 android:gravity="center"
                 android:textSize="18sp"
                 android:textStyle="bold"
-                android:layout_weight="1" android:textColor="@color/colorText"/>
+                android:layout_weight="1" android:textColor="@color/colorText"
+                android:background="@android:color/transparent" android:paddingTop="4dp" android:paddingBottom="4dp"/>
         <TextView
                 android:text="0/12"
                 android:layout_width="match_parent"
@@ -36,7 +39,8 @@
                 android:gravity="center"
                 android:textSize="18sp" android:textStyle="bold"
                 android:layout_weight="1" android:textColorHint="@android:color/background_light"
-                android:textColor="@color/colorText"/>
+                android:textColor="@color/colorText" android:background="@android:color/transparent"
+                android:paddingTop="4dp" android:paddingBottom="4dp"/>
     </LinearLayout>
 
     <ImageView
@@ -63,7 +67,7 @@
             app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"
             android:layout_marginRight="8dp" android:textStyle="bold"
             android:layout_marginBottom="16dp"
-            app:layout_constraintBottom_toTopOf="@+id/include" android:textColor="@color/colorText"
+            app:layout_constraintBottom_toTopOf="@+id/include" android:textColor="@color/backgroundLinearLayoutInterno"
             android:textColorHint="@android:color/background_light" android:gravity="center"/>
     <include
             layout="@layout/keyboardlength24"
