@@ -6,8 +6,8 @@
     <color name="corbutton">#81b9bf</color>
     <color name="clickbutton">#AF0000</color>
     <color name="background">#E5FFFF</color>
-    <color name="backgroundLinearLayoutInterno">#81b9bf</color>
-    <color name="backgroundFundo">#b2ebf2</color>
+    <color name="backgroundLinearLayoutInterno">#81B9BF</color>
+    <color name="backgroundFundo">#B2EBF2</color>
     <color name="colorText">#F7F7F7</color>
     <color name="colorButtonNavView">#484848</color>
 
