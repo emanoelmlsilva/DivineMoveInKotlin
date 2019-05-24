@@ -3,21 +3,25 @@
               xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools"
               android:orientation="horizontal"
               android:layout_width="match_parent"
-              android:layout_height="match_parent" android:layout_weight="1">
+              android:layout_height="match_parent" android:layout_weight="1"
+              android:background="@android:color/transparent">
 
     <ImageView
             android:layout_width="match_parent"
             android:layout_height="match_parent" app:srcCompat="@drawable/heart" android:id="@+id/heart1"
-            android:layout_weight="1" android:contentDescription="TODO" tools:ignore="VectorDrawableCompat"/>
+            android:layout_weight="1" android:contentDescription="TODO" tools:ignore="VectorDrawableCompat"
+            android:background="@android:color/transparent"/>
     <ImageView
             android:layout_width="match_parent"
             android:layout_weight="1"
             android:layout_height="match_parent" app:srcCompat="@drawable/heart" android:id="@+id/heart2"
-            android:contentDescription="@string/descriptionHeartd2" tools:ignore="VectorDrawableCompat"/>
+            android:contentDescription="@string/descriptionHeartd2" tools:ignore="VectorDrawableCompat"
+            android:background="@android:color/transparent"/>
     <ImageView
             android:layout_width="match_parent"
             android:layout_weight="1"
             android:layout_height="match_parent" app:srcCompat="@drawable/heart" android:id="@+id/heart3"
-            android:contentDescription="@string/descriptionHeartd1" tools:ignore="VectorDrawableCompat"/>
+            android:contentDescription="@string/descriptionHeartd1" tools:ignore="VectorDrawableCompat"
+            android:background="@android:color/transparent"/>
 
 </LinearLayout>

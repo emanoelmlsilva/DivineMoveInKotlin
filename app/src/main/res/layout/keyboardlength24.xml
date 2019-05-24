@@ -5,12 +5,12 @@
               android:layout_width="match_parent"
               android:layout_height="wrap_content"
               android:background="@drawable/fundokeyboard"
-              android:padding="8dp" android:layout_weight="1">
+              android:layout_weight="1" android:paddingLeft="8dp" android:paddingRight="8dp" android:paddingTop="4dp">
     <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@color/backgroundLinearLayoutInterno"
+            android:background="@android:color/transparent"
             android:layout_weight="1">
 
         <com.google.android.material.button.MaterialButton
@@ -20,10 +20,9 @@
                 android:text="@string/buttonText"
                 style="@style/Widget.MaterialComponents.Button.OutlinedButton"
                 android:layout_weight="1" android:layout_gravity="center"
-                app:strokeColor="@android:color/background_light" android:textColor="@android:color/background_light"
-                android:textColorHint="@color/clickbutton"
+                app:strokeColor="@color/colorPrimaryText" android:textColor="@color/colorPrimaryText"
                 android:textColorHighlight="@android:color/background_light"
-                android:textColorLink="@android:color/background_light" android:gravity="center" android:padding="8dp"/>
+                android:textColorLink="@android:color/background_light" android:gravity="center" android:padding="4dp"/>
 
         <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnAction2"
@@ -32,12 +31,12 @@
                 android:layout_marginLeft="4dp"
                 android:text="@string/buttonText" android:layout_gravity="center"
                 style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-                app:strokeColor="@android:color/background_light"
+                app:strokeColor="@color/colorPrimaryText"
                 android:layout_weight="1" android:layout_marginStart="4dp"
-                android:textColor="@android:color/background_light"
+                android:textColor="@color/colorPrimaryText"
                 android:textColorHighlight="@android:color/background_light"
                 android:textColorLink="@android:color/background_light"
-                android:textColorHint="@android:color/background_light" android:gravity="center" android:padding="8dp"/>
+                android:textColorHint="@android:color/background_light" android:gravity="center" android:padding="4dp"/>
 
         <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnAction3"
@@ -48,11 +47,11 @@
                 android:layout_gravity="center"
                 android:text="@string/buttonText" android:layout_marginStart="4dp"
                 style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-                app:strokeColor="@android:color/background_light"
-                android:layout_weight="1" android:textColor="@android:color/background_light"
+                app:strokeColor="@color/colorPrimaryText"
+                android:layout_weight="1" android:textColor="@color/colorPrimaryText"
                 android:textColorHighlight="@android:color/background_light"
                 android:textColorLink="@android:color/background_light"
-                android:textColorHint="@android:color/background_light" android:gravity="center" android:padding="8dp"/>
+                android:textColorHint="@android:color/background_light" android:gravity="center" android:padding="4dp"/>
 
         <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnAction4"
@@ -63,11 +62,11 @@
                 android:layout_gravity="center"
                 android:text="@string/buttonText" android:layout_marginStart="4dp"
                 style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-                app:strokeColor="@android:color/background_light"
-                android:layout_weight="1" android:textColor="@android:color/background_light"
+                app:strokeColor="@color/colorPrimaryText"
+                android:layout_weight="1" android:textColor="@color/colorPrimaryText"
                 android:textColorHighlight="@android:color/background_light"
                 android:textColorLink="@android:color/background_light"
-                android:textColorHint="@android:color/background_light" android:gravity="center" android:padding="8dp"/>
+                android:textColorHint="@android:color/background_light" android:gravity="center" android:padding="4dp"/>
 
         <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnAction5"
@@ -77,12 +76,12 @@
                 android:layout_marginTop="0dp"
                 android:text="@string/buttonText" android:layout_marginStart="4dp"
                 style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-                app:strokeColor="@android:color/background_light"
-                android:layout_weight="1" android:textColor="@android:color/background_light"
+                app:strokeColor="@color/colorPrimaryText"
+                android:layout_weight="1" android:textColor="@color/colorPrimaryText"
                 android:textColorHighlight="@android:color/background_light"
                 android:textColorLink="@android:color/background_light"
                 android:textColorHint="@android:color/background_light" android:layout_gravity="center"
-                android:gravity="center" android:padding="8dp"/>
+                android:gravity="center" android:padding="4dp"/>
 
         <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnAction6"
@@ -92,12 +91,12 @@
                 android:layout_marginTop="0dp"
                 android:text="@string/buttonText" android:layout_marginStart="4dp"
                 style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-                app:strokeColor="@android:color/background_light"
-                android:layout_weight="1" android:textColor="@android:color/background_light"
+                app:strokeColor="@color/colorPrimaryText"
+                android:layout_weight="1" android:textColor="@color/colorPrimaryText"
                 android:textColorHighlight="@android:color/background_light"
                 android:textColorLink="@android:color/background_light"
                 android:textColorHint="@android:color/background_light" android:layout_gravity="center"
-                android:gravity="center" android:padding="8dp"/>
+                android:gravity="center" android:padding="4dp"/>
 
         <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnAction7"
@@ -108,11 +107,11 @@
                 android:layout_weight="1"
                 android:text="@string/buttonText" android:layout_marginStart="4dp"
                 style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-                app:strokeColor="@android:color/background_light" android:textColor="@android:color/background_light"
+                app:strokeColor="@color/colorPrimaryText" android:textColor="@color/colorPrimaryText"
                 android:textColorHighlight="@android:color/background_light"
                 android:textColorLink="@android:color/background_light"
                 android:textColorHint="@android:color/background_light" android:layout_gravity="center"
-                android:gravity="center" android:padding="8dp"/>
+                android:gravity="center" android:padding="4dp"/>
 
         <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnAction8"
@@ -122,19 +121,19 @@
                 android:layout_marginTop="0dp"
                 android:text="@string/buttonText" android:layout_marginStart="4dp"
                 style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-                app:strokeColor="@android:color/background_light"
-                android:layout_weight="1" android:textColor="@android:color/background_light"
+                app:strokeColor="@color/colorPrimaryText"
+                android:layout_weight="1" android:textColor="@color/colorPrimaryText"
                 android:textColorHighlight="@android:color/background_light"
                 android:textColorLink="@android:color/background_light"
                 android:textColorHint="@android:color/background_light" android:layout_gravity="center"
-                android:gravity="center" android:padding="8dp"/>
+                android:gravity="center" android:padding="4dp"/>
     </LinearLayout>
 
     <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@color/backgroundLinearLayoutInterno"
+            android:background="@android:color/transparent"
             android:layout_marginTop="4dp" android:layout_weight="1">
         <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnAction9"
@@ -142,12 +141,13 @@
                 android:layout_height="match_parent"
                 android:layout_marginTop="0dp"
                 android:text="@string/buttonText" style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-                app:strokeColor="@android:color/background_light"
-                android:layout_weight="1" android:textColor="@android:color/background_light"
+                app:strokeColor="@color/colorPrimaryText"
+                android:layout_weight="1" android:textColor="@color/colorPrimaryText"
                 android:textColorHighlight="@android:color/background_light"
                 android:textColorLink="@android:color/background_light"
                 android:textColorHint="@android:color/background_light" android:gravity="center"
-                android:layout_gravity="center" android:padding="8dp"/>
+                android:layout_gravity="center" android:padding="4dp" android:paddingLeft="0dp"
+                android:paddingTop="0dp" android:paddingRight="0dp" android:paddingBottom="0dp"/>
 
         <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnAction10"
@@ -157,12 +157,13 @@
                 android:layout_marginLeft="4dp"
                 android:text="@string/buttonText" android:layout_marginStart="4dp"
                 style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-                app:strokeColor="@android:color/background_light"
-                android:layout_weight="1" android:textColor="@android:color/background_light"
+                app:strokeColor="@color/colorPrimaryText"
+                android:layout_weight="1" android:textColor="@color/colorPrimaryText"
                 android:textColorHighlight="@android:color/background_light"
                 android:textColorLink="@android:color/background_light"
                 android:textColorHint="@android:color/background_light" android:gravity="center"
-                android:layout_gravity="center" android:padding="8dp"/>
+                android:layout_gravity="center" android:padding="4dp" android:paddingLeft="0dp"
+                android:paddingTop="0dp" android:paddingRight="0dp" android:paddingBottom="0dp"/>
 
         <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnAction11"
@@ -172,12 +173,13 @@
                 android:layout_marginTop="0dp"
                 android:text="@string/buttonText" android:layout_marginStart="4dp"
                 style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-                app:strokeColor="@android:color/background_light"
-                android:layout_weight="1" android:textColor="@android:color/background_light"
+                app:strokeColor="@color/colorPrimaryText"
+                android:layout_weight="1" android:textColor="@color/colorPrimaryText"
                 android:textColorHighlight="@android:color/background_light"
                 android:textColorLink="@android:color/background_light"
                 android:textColorHint="@android:color/background_light" android:gravity="center"
-                android:layout_gravity="center" android:padding="8dp"/>
+                android:layout_gravity="center" android:padding="4dp" android:paddingLeft="0dp"
+                android:paddingTop="0dp" android:paddingRight="0dp" android:paddingBottom="0dp"/>
 
         <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnAction12"
@@ -187,12 +189,13 @@
                 android:layout_marginTop="0dp"
                 android:text="@string/buttonText" android:layout_marginStart="4dp"
                 style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-                app:strokeColor="@android:color/background_light"
-                android:layout_weight="1" android:textColor="@android:color/background_light"
+                app:strokeColor="@color/colorPrimaryText"
+                android:layout_weight="1" android:textColor="@color/colorPrimaryText"
                 android:textColorHighlight="@android:color/background_light"
                 android:textColorLink="@android:color/background_light"
                 android:textColorHint="@android:color/background_light" android:gravity="center"
-                android:layout_gravity="center" android:padding="8dp"/>
+                android:layout_gravity="center" android:padding="4dp" android:paddingLeft="0dp"
+                android:paddingTop="0dp" android:paddingRight="0dp" android:paddingBottom="0dp"/>
 
         <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnAction13"
@@ -202,12 +205,13 @@
                 android:layout_marginTop="0dp"
                 android:text="@string/buttonText" android:layout_marginStart="4dp"
                 style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-                app:strokeColor="@android:color/background_light"
-                android:layout_weight="1" android:textColor="@android:color/background_light"
+                app:strokeColor="@color/colorPrimaryText"
+                android:layout_weight="1" android:textColor="@color/colorPrimaryText"
                 android:textColorHighlight="@android:color/background_light"
                 android:textColorLink="@android:color/background_light"
                 android:textColorHint="@android:color/background_light" android:gravity="center"
-                android:layout_gravity="center" android:padding="8dp"/>
+                android:layout_gravity="center" android:padding="4dp" android:paddingLeft="0dp"
+                android:paddingTop="0dp" android:paddingRight="0dp" android:paddingBottom="0dp"/>
 
         <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnAction14"
@@ -217,12 +221,13 @@
                 android:layout_marginTop="0dp"
                 android:text="@string/buttonText" android:layout_marginStart="4dp"
                 style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-                app:strokeColor="@android:color/background_light"
-                android:layout_weight="1" android:textColor="@android:color/background_light"
+                app:strokeColor="@color/colorPrimaryText"
+                android:layout_weight="1" android:textColor="@color/colorPrimaryText"
                 android:textColorHighlight="@android:color/background_light"
                 android:textColorLink="@android:color/background_light"
                 android:textColorHint="@android:color/background_light" android:gravity="center"
-                android:layout_gravity="center" android:padding="8dp"/>
+                android:layout_gravity="center" android:padding="4dp" android:paddingLeft="0dp"
+                android:paddingTop="0dp" android:paddingRight="0dp" android:paddingBottom="0dp"/>
 
         <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnAction15"
@@ -232,12 +237,13 @@
                 android:layout_marginTop="0dp"
                 android:text="@string/buttonText" android:layout_marginStart="4dp"
                 style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-                app:strokeColor="@android:color/background_light"
-                android:layout_weight="1" android:textColor="@android:color/background_light"
+                app:strokeColor="@color/colorPrimaryText"
+                android:layout_weight="1" android:textColor="@color/colorPrimaryText"
                 android:textColorHighlight="@android:color/background_light"
                 android:textColorLink="@android:color/background_light"
                 android:textColorHint="@android:color/background_light" android:gravity="center"
-                android:layout_gravity="center" android:padding="8dp"/>
+                android:layout_gravity="center" android:padding="4dp" android:paddingLeft="0dp"
+                android:paddingTop="0dp" android:paddingRight="0dp" android:paddingBottom="0dp"/>
 
         <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnAction16"
@@ -247,19 +253,20 @@
                 android:layout_marginTop="0dp"
                 android:text="@string/buttonText" android:layout_marginStart="4dp"
                 style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-                app:strokeColor="@android:color/background_light"
-                android:layout_weight="1" android:textColor="@android:color/background_light"
+                app:strokeColor="@color/colorPrimaryText"
+                android:layout_weight="1" android:textColor="@color/colorPrimaryText"
                 android:textColorHighlight="@android:color/background_light"
                 android:textColorLink="@android:color/background_light"
                 android:textColorHint="@android:color/background_light" android:gravity="center"
-                android:layout_gravity="center" android:padding="8dp"/>
+                android:layout_gravity="center" android:padding="4dp" android:paddingLeft="0dp"
+                android:paddingTop="0dp" android:paddingRight="0dp" android:paddingBottom="0dp"/>
     </LinearLayout>
 
     <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@color/backgroundLinearLayoutInterno"
+            android:background="@android:color/transparent"
             android:layout_marginTop="4dp" android:layout_weight="1">
         <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnAction17"
@@ -267,12 +274,12 @@
                 android:layout_height="match_parent"
                 android:layout_marginTop="0dp"
                 android:text="@string/buttonText" style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-                app:strokeColor="@android:color/background_light"
-                android:layout_weight="1" android:textColor="@android:color/background_light"
+                app:strokeColor="@color/colorPrimaryText"
+                android:layout_weight="1" android:textColor="@color/colorPrimaryText"
                 android:textColorHighlight="@android:color/background_light"
                 android:textColorLink="@android:color/background_light"
                 android:textColorHint="@android:color/background_light" android:gravity="center"
-                android:layout_gravity="center" android:padding="8dp"/>
+                android:layout_gravity="center" android:padding="4dp"/>
 
         <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnAction18"
@@ -282,12 +289,12 @@
                 android:layout_marginLeft="4dp"
                 android:text="@string/buttonText" android:layout_marginStart="4dp"
                 style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-                app:strokeColor="@android:color/background_light"
-                android:layout_weight="1" android:textColor="@android:color/background_light"
+                app:strokeColor="@color/colorPrimaryText"
+                android:layout_weight="1" android:textColor="@color/colorPrimaryText"
                 android:textColorHighlight="@android:color/background_light"
                 android:textColorLink="@android:color/background_light"
                 android:textColorHint="@android:color/background_light" android:gravity="center"
-                android:layout_gravity="center" android:padding="8dp"/>
+                android:layout_gravity="center" android:padding="4dp"/>
 
         <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnAction19"
@@ -297,12 +304,12 @@
                 android:layout_marginTop="0dp"
                 android:text="@string/buttonText" android:layout_marginStart="4dp"
                 style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-                app:strokeColor="@android:color/background_light"
-                android:layout_weight="1" android:textColor="@android:color/background_light"
+                app:strokeColor="@color/colorPrimaryText"
+                android:layout_weight="1" android:textColor="@color/colorPrimaryText"
                 android:textColorHighlight="@android:color/background_light"
                 android:textColorLink="@android:color/background_light"
                 android:textColorHint="@android:color/background_light" android:gravity="center"
-                android:layout_gravity="center" android:padding="8dp"/>
+                android:layout_gravity="center" android:padding="4dp"/>
 
         <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnAction20"
@@ -312,12 +319,12 @@
                 android:layout_marginTop="0dp"
                 android:text="@string/buttonText" android:layout_marginStart="4dp"
                 style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-                app:strokeColor="@android:color/background_light"
-                android:layout_weight="1" android:textColor="@android:color/background_light"
+                app:strokeColor="@color/colorPrimaryText"
+                android:layout_weight="1" android:textColor="@color/colorPrimaryText"
                 android:textColorHighlight="@android:color/background_light"
                 android:textColorLink="@android:color/background_light"
                 android:textColorHint="@android:color/background_light" android:gravity="center"
-                android:layout_gravity="center" android:padding="8dp"/>
+                android:layout_gravity="center" android:padding="4dp"/>
 
         <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnAction21"
@@ -327,12 +334,12 @@
                 android:layout_marginTop="0dp"
                 android:text="@string/buttonText" android:layout_marginStart="4dp"
                 style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-                app:strokeColor="@android:color/background_light"
-                android:layout_weight="1" android:textColor="@android:color/background_light"
+                app:strokeColor="@color/colorPrimaryText"
+                android:layout_weight="1" android:textColor="@color/colorPrimaryText"
                 android:textColorHighlight="@android:color/background_light"
                 android:textColorLink="@android:color/background_light"
                 android:textColorHint="@android:color/background_light" android:gravity="center"
-                android:layout_gravity="center" android:padding="8dp"/>
+                android:layout_gravity="center" android:padding="4dp"/>
 
         <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnAction22"
@@ -342,12 +349,12 @@
                 android:layout_marginTop="0dp"
                 android:text="@string/buttonText" android:layout_marginStart="4dp"
                 style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-                app:strokeColor="@android:color/background_light"
-                android:layout_weight="1" android:textColor="@android:color/background_light"
+                app:strokeColor="@color/colorPrimaryText"
+                android:layout_weight="1" android:textColor="@color/colorPrimaryText"
                 android:textColorHighlight="@android:color/background_light"
                 android:textColorLink="@android:color/background_light"
                 android:textColorHint="@android:color/background_light" android:gravity="center"
-                android:layout_gravity="center" android:padding="8dp"/>
+                android:layout_gravity="center" android:padding="4dp"/>
 
         <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnAction23"
@@ -357,12 +364,12 @@
                 android:layout_marginTop="0dp"
                 android:text="@string/buttonText" android:layout_marginStart="4dp"
                 style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-                app:strokeColor="@android:color/background_light"
-                android:layout_weight="1" android:textColor="@android:color/background_light"
+                app:strokeColor="@color/colorPrimaryText"
+                android:layout_weight="1" android:textColor="@color/colorPrimaryText"
                 android:textColorHighlight="@android:color/background_light"
                 android:textColorLink="@android:color/background_light"
                 android:textColorHint="@android:color/background_light" android:gravity="center"
-                android:layout_gravity="center" android:padding="8dp"/>
+                android:layout_gravity="center" android:padding="4dp"/>
 
         <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnAction24"
@@ -372,29 +379,29 @@
                 android:layout_marginTop="0dp"
                 android:text="@string/buttonText" android:layout_marginStart="4dp"
                 style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-                app:strokeColor="@android:color/background_light"
-                android:layout_weight="1" android:textColor="@android:color/background_light"
+                app:strokeColor="@color/colorPrimaryText"
+                android:layout_weight="1" android:textColor="@color/colorPrimaryText"
                 android:textColorHighlight="@android:color/background_light"
                 android:textColorLink="@android:color/background_light"
                 android:textColorHint="@android:color/background_light" android:gravity="center"
-                android:layout_gravity="center" android:padding="8dp"/>
+                android:layout_gravity="center" android:padding="4dp"/>
     </LinearLayout>
 
     <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginTop="4dp"
-            android:background="@color/backgroundLinearLayoutInterno"
-            android:layout_marginStart="324dp" android:layout_marginLeft="162dp" android:layout_weight="1">
+            android:background="@android:color/transparent"
+            android:layout_marginStart="324dp" android:layout_weight="1"
+    >
         <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@color/backgroundLinearLayoutInterno"
+                android:background="@android:color/transparent"
                 app:srcCompat="@drawable/ic_backspace_black_24dp"
                 android:id="@+id/imageDelete" tools:ignore="VectorDrawableCompat"
-                android:contentDescription="TODO" android:layout_weight="1" android:layout_gravity="center"
-                android:padding="2dp"/>
+                android:contentDescription="TODO" android:layout_weight="1"
+                android:paddingBottom="4dp"/>
     </LinearLayout>
 
 </LinearLayout>

@@ -20,4 +20,8 @@
         <!---->
     </style>
     <style name="MyStyle.PopupOverlay" parent="ThemeOverlay.AppCompat.Light"/>
+
+    <style name="myalertDialogCustom" parent="Theme.MaterialComponents.Dialog.Alert">
+        <item name="android:textColor">#0C090A</item>
+    </style>
 </resources>

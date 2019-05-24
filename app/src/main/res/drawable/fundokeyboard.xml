@@ -8,11 +8,12 @@
     />
 
     <solid
-        android:color="#81b9bf"
+        android:color="@color/background"
     />
 
     <stroke
             android:width="2dp"
-            android:color="@android:color/white"
+            android:color="@android:color/transparent"
+
     />
 </shape>

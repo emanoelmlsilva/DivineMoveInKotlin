@@ -10,6 +10,9 @@ import com.example.divine.DialogMessage.MyDialogMessage
 import com.example.divine.Model.ChoseWord
 import com.example.divine.R
 import com.example.divine.Chronometer.MyChronometer
+import com.example.divine.Controller.RecordController
+import com.example.divine.Model.CounterScore
+import com.example.divine.Model.Records
 import kotlinx.android.synthetic.main.activity_play.*
 import kotlinx.android.synthetic.main.heartcont.*
 import kotlinx.android.synthetic.main.keyboardlength24.*
@@ -33,6 +36,9 @@ class PlayActivity: AppCompatActivity(), View.OnClickListener{
     var chronometer: MyChronometer? = null
     var alertDialog: MyDialogMessage? = null
     var backMainIntent: Intent? = null
+    var fasesDB: RecordController? = null
+    var recordAtual: Records? = null
+    var contScore: CounterScore = CounterScore(1)
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -44,9 +50,9 @@ class PlayActivity: AppCompatActivity(), View.OnClickListener{
     }
 
     fun init(){
-
+        fasesDB = RecordController(this)
         this.contLoseLif = 3
-        this.backMainIntent = Intent(this,MainNavActivity::class.java)
+        this.backMainIntent = Intent(this,MainActivity::class.java)
         instanceButtons()
         allActionButtonDeleteShow()
     }
@@ -63,7 +69,7 @@ class PlayActivity: AppCompatActivity(), View.OnClickListener{
 
     fun instanceButtons(){
 
-        this.alertDialog = MyDialogMessage(this,R.style.Theme_MaterialComponents_Dialog_Alert)
+        this.alertDialog = MyDialogMessage(this,R.style.myalertDialogCustom)
         this.listButton = ArrayList(24)
         this.chronometer = MyChronometer(findViewById(R.id.cronometro))
         this.userWord = ChoseWord(this)
@@ -179,6 +185,8 @@ class PlayActivity: AppCompatActivity(), View.OnClickListener{
         if(this.positionLastWord == this.userWord!!.move.length && !this.alreadyChecked!!){
             if(this.userWord!!.checkWordEquals(this.userWord!!.getPositionImageArray(this.userWord!!.image!!),this.textNameMove.text.toString())){
                 this.alertDialog!!.messageCheckVictor("Resposta Certa",R.drawable.death_star)
+                this.contScore.changeLevel(this.userWord!!.level)
+                this.contScore.calculateScore(this.chronometer?.getTimefinal()!!)
                 this.actualCorrect++
                 nextDivine()
             }else{
@@ -238,9 +246,14 @@ class PlayActivity: AppCompatActivity(), View.OnClickListener{
 
     fun finishPlay(){
         if(this.contLoseLif == 0){
+
+            recordAtual = Records(contScore.getScoreFinal(),actualCorrect, this.userWord!!.size())
+
             this.chronometer?.startChronometer()
             this.alertDialog?.message("jogo finalizado",object : MyDialogMessage.BackToMenu {
                 override fun popBack() {
+
+                    fasesDB?.addRecord(recordAtual)
                     startActivity(backMainIntent)
                 }
             })
@@ -249,6 +262,11 @@ class PlayActivity: AppCompatActivity(), View.OnClickListener{
 
     fun finishAllRandom(){
         if(this.userWord!!.allRandom()) {
+
+            recordAtual = Records(contScore.getScoreFinal(),actualCorrect, this.totalCorrect)
+
+            fasesDB?.addRecord(recordAtual)
+
             this.alertDialog?.message("todas as imagens foram utilizadas", object : MyDialogMessage.BackToMenu {
                 override fun popBack() {
                     startActivity(backMainIntent)

@@ -33,11 +33,12 @@ class Reader(){
             for (stringDivine in arrayDivine) {
                 var image: String = stringDivine.split(" - ")[0]
                 var move: String = stringDivine.split(" - ")[1]
+                var level: Int = stringDivine.split(" - ")[2].toInt()
                 var resId: Int = myContext.resources.getIdentifier(image, "drawable", myContext.packageName)
                 if (resId == 0) {
                     println("erro drawable não exites");
                 } else if (!searchForDivineIquals(move, resId,arrayChose)) {
-                    divineimage = DivineImageWord(resId, move)
+                    divineimage = DivineImageWord(resId, move,level)
                     arrayChose.add(divineimage)
                 }
             }

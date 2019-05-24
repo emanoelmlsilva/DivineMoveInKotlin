@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content" android:background="@android:color/transparent"
+              android:layout_weight="1">
+
+    <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" android:padding="16dp"
+            android:layout_weight="1"
+            android:layout_margin="16dp" android:background="@drawable/fundokeyboard">
+        <TextView
+                android:text="Nick"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:id="@+id/textNick"
+                android:textColor="@color/colorAccent" android:textAllCaps="true" android:textStyle="bold"
+                android:gravity="center" android:background="@android:color/transparent" android:textSize="24sp"
+                android:padding="6dp"/>
+        <TextView
+                android:text="score"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:id="@+id/textScore"
+                android:background="@android:color/transparent" android:gravity="center" android:textSize="18sp"
+                android:padding="6dp" android:textColor="@color/colorAccent"/>
+        <TextView
+                android:text="total"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:id="@+id/textTotalImage"
+                android:background="@android:color/transparent" android:gravity="center" android:textSize="18sp"
+                android:padding="6dp" android:textColor="@color/colorAccent"/>
+        <TextView
+                android:text="acertos"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:id="@+id/textTotalHit"
+                android:background="@android:color/transparent" android:gravity="center" android:textSize="18sp"
+                android:padding="6dp" android:textColor="@color/colorAccent"/>
+    </LinearLayout>
+</LinearLayout>
