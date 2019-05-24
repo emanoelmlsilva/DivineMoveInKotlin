@@ -10,15 +10,25 @@
             android:supportsRtl="true"
             android:theme="@style/MyStyle"
             tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".Activity.SobreActivity" android:screenOrientation="portrait">
+        <activity android:name=".Activity.RecordesActivity"
+                  android:screenOrientation="portrait">
+        </activity>
+        <activity android:name=".Activity.FasesActivity"
+                  android:screenOrientation="portrait">
+        </activity>
+        <activity
+                android:name=".Activity.SobreActivity"
+                android:screenOrientation="portrait">
         </activity>
         <activity
                 android:name=".Activity.PlayActivity"
                 android:label="@string/title_activity_play"
-                android:theme="@style/MyStyle"
-                android:screenOrientation="portrait">
+                android:screenOrientation="portrait"
+                android:theme="@style/MyStyle">
         </activity>
-        <activity android:name=".Activity.MainNavActivity" android:screenOrientation="portrait">
+        <activity
+                android:name=".Activity.MainActivity"
+                android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
