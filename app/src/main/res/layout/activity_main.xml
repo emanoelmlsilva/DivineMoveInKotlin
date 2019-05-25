@@ -50,10 +50,10 @@
                 android:layout_height="match_parent"
                 app:backgroundTint="@color/background" android:text="Jogar" android:textColor="@color/colorAccent"
                 app:icon="@drawable/gamepad_variant2" app:iconTint="@color/colorAccent"
-                app:iconPadding="@dimen/activity_horizontal_margin"
+                app:iconPadding="@dimen/about_group_text_padding"
                 android:isScrollContainer="false" android:id="@+id/btn_jogar"
                 android:layout_weight="1"
-                android:padding="@dimen/about_group_item_text_size"/>
+                android:padding="@dimen/about_group_text_padding"/>
         <com.google.android.material.button.MaterialButton
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
