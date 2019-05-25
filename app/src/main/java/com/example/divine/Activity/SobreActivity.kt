@@ -17,7 +17,7 @@ class SobreActivity : AppCompatActivity() {
 "Nome_do_Jogo ele serve para instigar a capacidade motora e reflexiva do jogador ao desafiá-lo a descobrir quais imagens são referentes a quais filmes em pouco tempo,"+
 "com a dificuldade de um teclado embaralhado. Tem o intuito de ser um jogo divertido e instigante."
         val sobre: View = AboutPage(this)
-            .setImage(R.drawable.ajuda)
+//            .setImage(R.drawable.ajuda)
             .setDescription(description)
             .addGroup("Fale Conosco")
             .addEmail("emanoel.silva@dce.ufpb.br","Envie um e-mail")
