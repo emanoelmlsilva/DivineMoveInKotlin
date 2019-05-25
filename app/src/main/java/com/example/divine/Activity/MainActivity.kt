@@ -27,15 +27,16 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     }
 
     override fun onClick(view: View){
-        openFragment(view as Button)
+        openActivity(view as Button)
     }
 
-    fun openFragment(button: Button){
+    fun openActivity(button: Button){
 
         when(button){
             btn_jogar -> {startActivity(Intent(this,FasesActivity::class.java))}
             btn_ajudar -> {startActivity(Intent(this,SobreActivity::class.java))}
             btn_recordes -> {startActivity(Intent(this,RecordesActivity::class.java))}
         }
+
     }
 }
