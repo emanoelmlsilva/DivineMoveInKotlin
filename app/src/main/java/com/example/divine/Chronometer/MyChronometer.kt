@@ -9,7 +9,7 @@ class MyChronometer(viewChronometer: View) {
 
     var cronometro: Chronometer;
     var timer: Long = 0
-    val TIME_FINAL = 45000
+    val TIME_FINAL = 30000
     var timeFinish: Boolean = false
 
     init{
