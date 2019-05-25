@@ -8,6 +8,7 @@
     <color name="background">#E5FFFF</color>
     <color name="backgroundLinearLayoutInterno">#81B9BF</color>
     <color name="backgroundFundo">#B2EBF2</color>
+    <color name="textColorMaterial">#212121</color>
     <color name="colorText">#F7F7F7</color>
     <color name="colorButtonNavView">#484848</color>
 
