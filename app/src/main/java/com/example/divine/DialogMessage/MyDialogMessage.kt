@@ -36,7 +36,7 @@ class MyDialogMessage(myContext: Context, idStyle: Int) {
 //        configurar icone
         builder.setIcon(id)
 //configurar opção de sim ou não
-        builder.setPositiveButton("OK",DialogInterface.OnClickListener {dialog, which -> })//função lambda
+        builder.setPositiveButton(" ",DialogInterface.OnClickListener {dialog, which -> })//função lambda
         builder.create()
         builder.show()
     }
