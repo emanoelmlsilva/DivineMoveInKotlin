@@ -262,12 +262,12 @@ class PlayActivity: AppCompatActivity(), View.OnClickListener{
 
             recordAtual = Records(contScore.getScoreFinal(),actualCorrect, this.userWord!!.size())
 
-            this.chronometer?.startChronometer()
             this.alertDialog?.message("jogo finalizado",object : MyDialogMessage.BackToMenu {
                 override fun popBack() {
 
                     fasesDB?.addRecord(recordAtual)
                     startActivity(backMainIntent)
+                    finish()
                 }
             })
         }
@@ -279,7 +279,7 @@ class PlayActivity: AppCompatActivity(), View.OnClickListener{
             recordAtual = Records(contScore.getScoreFinal(),actualCorrect, this.totalCorrect)
 
             fasesDB?.addRecord(recordAtual)
-
+            this.chronometer?.stopAndResetChronometer()
             this.alertDialog?.message("todas as imagens foram utilizadas", object : MyDialogMessage.BackToMenu {
                 override fun popBack() {
                     startActivity(backMainIntent)
