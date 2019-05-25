@@ -84,11 +84,12 @@ class PlayActivity: AppCompatActivity(), View.OnClickListener{
 
     fun initButtonsKeyBoard(){
         for(i in 0..23){
-            this.listButton?.add((findViewById<Button>(this.listIdButton!![i])) as Button)
+            this.listButton?.add((findViewById(this.listIdButton!![i])) as Button)
         }
     }
 
     fun setWordButtonsKeyBoard(){
+
         for(i in 0 until this.listButton!!.size){
 
             this.listButton!![i].text = this.words?.get(i)?.toString()
@@ -99,39 +100,35 @@ class PlayActivity: AppCompatActivity(), View.OnClickListener{
 
         for(i in 0 until this.listButton!!.size){
 
-
-            this.listButton?.get(i)?.setOnClickListener({ setOnClick(it) })//função lambda ou arrow
+            setOnClickKeyBoard(this.listButton!!.get(i))
 
         }
 
     }
 
-    fun setOnClick(viewButton: View) {
-        if(viewButton is Button || viewButton is ImageButton){
-            viewButton.setOnClickListener(this)
-        }
+    fun setOnClickKeyBoard(button: Button) {
+        button.setOnClickListener(this)
+
 
     }
 
     fun clickButtn(){
-        setOnClick(btn_pass)
-        setOnClick(imageDelete)
+        btn_pass.setOnClickListener( {
+            nextDivine()
+        })
+
+        imageDelete.setOnClickListener({
+            alreadyChecked = false
+            deleteSpaceClickButton()
+        })
     }
 
     override fun onClick(view: View?) {
 
-        when(view){
-            btn_pass -> {nextDivine()}
-            imageDelete -> {
-                alreadyChecked = false
-                deleteSpaceClickButton()
-            }
-            else -> {
-                var buttonAll: Button = view as Button
-                takesWordClickButton(buttonAll.text.toString().toCharArray()[0],buttonAll)
-                checkNameEqualsImage()
-            }
-        }
+        var buttonAll: Button = view as Button
+        takesWordClickButton(buttonAll.text.toString().toCharArray()[0],buttonAll)
+        checkNameEqualsImage()
+
     }
 
     fun setTextAll(){
