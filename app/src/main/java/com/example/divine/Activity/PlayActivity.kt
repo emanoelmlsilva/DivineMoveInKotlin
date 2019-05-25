@@ -1,6 +1,7 @@
 package com.example.divine.Activity
 
 import android.content.Intent
+import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
@@ -13,6 +14,8 @@ import com.example.divine.Chronometer.MyChronometer
 import com.example.divine.Controller.RecordController
 import com.example.divine.Model.CounterScore
 import com.example.divine.Model.Records
+import com.example.divine.R.drawable.death_star_variant
+import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.activity_play.*
 import kotlinx.android.synthetic.main.heartcont.*
 import kotlinx.android.synthetic.main.keyboardlength24.*
@@ -40,7 +43,6 @@ class PlayActivity: AppCompatActivity(), View.OnClickListener{
     var fasesDB: RecordController? = null
     var recordAtual: Records? = null
     var contScore: CounterScore = CounterScore(1)
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -127,7 +129,7 @@ class PlayActivity: AppCompatActivity(), View.OnClickListener{
 
         var buttonAll: Button = view as Button
         takesWordClickButton(buttonAll.text.toString().toCharArray()[0],buttonAll)
-        checkNameEqualsImage()
+        checkNameEqualsImage(view)
 
     }
 
@@ -193,19 +195,28 @@ class PlayActivity: AppCompatActivity(), View.OnClickListener{
         return findViewById(this.buttonsSelection!![--this.positionSelections])
     }
 
-    fun checkNameEqualsImage(){
+    fun checkNameEqualsImage(view:View){
         if(this.positionLastWord == this.userWord!!.move.length && !this.alreadyChecked!!){
             if(this.userWord!!.checkWordEquals(this.userWord!!.getPositionImageArray(this.userWord!!.image!!),this.textNameMove.text.toString())){
                 this.actualCorrect++
-                this.alertDialog!!.messageCheckVictor("Resposta Certa",R.drawable.death_star)
+                snackbarCustom(view,"#FF2BA700","Resposta Certa")
                 this.contScore.changeLevel(this.userWord!!.level)
                 this.contScore.calculateScore(this.chronometer?.getTimefinal()!!)
                 nextDivine()
             }else{
-                this.alertDialog!!.messageCheckVictor("Resposta Errada",R.drawable.death_star_variant)
+                snackbarCustom(view,"#AF0000","Resposta Errada")
                 this.alreadyChecked = true
             }
         }
+    }
+
+    private fun snackbarCustom(view:View,textColorHexa: String,message: String){
+        val snackbar: Snackbar = Snackbar.make(view, message, Snackbar.LENGTH_SHORT)
+        val snackView: View = snackbar.view
+        snackView.setBackgroundColor(Color.parseColor("#212121"))
+        val textview: TextView = snackView.findViewById(R.id.snackbar_text)
+        textview.setTextColor(Color.parseColor(textColorHexa))
+        snackbar.show()
     }
 
     fun nextDivine(){
