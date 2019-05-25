@@ -29,6 +29,7 @@ class PlayActivity: AppCompatActivity(), View.OnClickListener{
     var contLoseLif: Int = 0
     var totalCorrect: Int = 0
     var actualCorrect: Int = 0
+    var actualImage: Int = 0
     val buttonsSelection = IntArray(23)
     val splash_time_out: Long = 1000
     var words:CharArray? = null
@@ -54,7 +55,8 @@ class PlayActivity: AppCompatActivity(), View.OnClickListener{
         this.contLoseLif = 3
         this.backMainIntent = Intent(this,MainActivity::class.java)
         instanceButtons()
-        allActionButtonDeleteShow()
+        allActionButtonDeleteShowKeyBoard()
+        clickButtn()
     }
 
     override fun onResume(){
@@ -74,50 +76,62 @@ class PlayActivity: AppCompatActivity(), View.OnClickListener{
         this.chronometer = MyChronometer(findViewById(R.id.cronometro))
         this.userWord = ChoseWord(this)
         this.totalCorrect = userWord!!.size()
-        this.actualCorrect = 0
-        initButtons()
+        this.actualImage = 1
+        initButtonsKeyBoard()
         setTextAll()
     }
 
 
-    fun initButtons(){
+    fun initButtonsKeyBoard(){
         for(i in 0..23){
             this.listButton?.add((findViewById<Button>(this.listIdButton!![i])) as Button)
         }
     }
 
-    fun setButtons(){
+    fun setWordButtonsKeyBoard(){
         for(i in 0 until this.listButton!!.size){
 
             this.listButton!![i].text = this.words?.get(i)?.toString()
         }
     }
 
-    fun allActionButtonDeleteShow(){
+    fun allActionButtonDeleteShowKeyBoard(){
 
         for(i in 0 until this.listButton!!.size){
 
-            this.listButton?.get(i)?.let { setOnClick(it) }
+
+            this.listButton?.get(i)?.setOnClickListener({ setOnClick(it) })//função lambda ou arrow
 
         }
 
-        this.imageDelete.setOnClickListener(object: View.OnClickListener{
-            override fun onClick(v: View?) {
-                alreadyChecked = false
-                deleteSpaceClickButton()
-            }
-        })
+    }
+
+    fun setOnClick(viewButton: View) {
+        if(viewButton is Button || viewButton is ImageButton){
+            viewButton.setOnClickListener(this)
+        }
 
     }
 
-    fun setOnClick(buttonAction: Button) {
-        buttonAction.setOnClickListener(this)
+    fun clickButtn(){
+        setOnClick(btn_pass)
+        setOnClick(imageDelete)
     }
 
     override fun onClick(view: View?) {
-       var buttonAll: Button = view as Button
-        takesWordClickButton(buttonAll.text.toString().toCharArray()[0],buttonAll)
-        checkNameEqualsImage()
+
+        when(view){
+            btn_pass -> {nextDivine()}
+            imageDelete -> {
+                alreadyChecked = false
+                deleteSpaceClickButton()
+            }
+            else -> {
+                var buttonAll: Button = view as Button
+                takesWordClickButton(buttonAll.text.toString().toCharArray()[0],buttonAll)
+                checkNameEqualsImage()
+            }
+        }
     }
 
     fun setTextAll(){
@@ -127,10 +141,11 @@ class PlayActivity: AppCompatActivity(), View.OnClickListener{
         this.positionSelections = 0
         this.userWord?.choseWordImage()
         this.textNameMove.text = this.userWord!!.mountLines()
-        this.textContPoint.text = "${this.actualCorrect}/${this.totalCorrect}"
+        this.textContPoint.text = "${this.actualImage}/${this.totalCorrect}"
         words = userWord?.choseWordKeyboard()
         this.imageMoveAtual.setImageResource(this.userWord?.image!!)
-        this.setButtons()
+        this.btn_pass
+        this.setWordButtonsKeyBoard()
     }
 
     fun takesWordClickButton(word: Char,button: Button){
@@ -184,10 +199,10 @@ class PlayActivity: AppCompatActivity(), View.OnClickListener{
     fun checkNameEqualsImage(){
         if(this.positionLastWord == this.userWord!!.move.length && !this.alreadyChecked!!){
             if(this.userWord!!.checkWordEquals(this.userWord!!.getPositionImageArray(this.userWord!!.image!!),this.textNameMove.text.toString())){
+                this.actualCorrect++
                 this.alertDialog!!.messageCheckVictor("Resposta Certa",R.drawable.death_star)
                 this.contScore.changeLevel(this.userWord!!.level)
                 this.contScore.calculateScore(this.chronometer?.getTimefinal()!!)
-                this.actualCorrect++
                 nextDivine()
             }else{
                 this.alertDialog!!.messageCheckVictor("Resposta Errada",R.drawable.death_star_variant)
@@ -200,6 +215,7 @@ class PlayActivity: AppCompatActivity(), View.OnClickListener{
         Handler().postDelayed({
                 resetTime()
                 if(contLoseLif > 0){
+                    this.actualImage++
                     finishAllRandom()
                     loadingNextImage()
                 }
