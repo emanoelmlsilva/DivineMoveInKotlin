@@ -273,7 +273,7 @@ class PlayActivity: AppCompatActivity(), View.OnClickListener{
 
             recordAtual = Records(contScore.getScoreFinal(),actualCorrect, this.userWord!!.size())
 
-            this.alertDialog?.message("jogo finalizado",object : MyDialogMessage.BackToMenu {
+            this.alertDialog?.message("Game Over",object : MyDialogMessage.BackToMenu {
                 override fun popBack() {
 
                     fasesDB?.addRecord(recordAtual)
