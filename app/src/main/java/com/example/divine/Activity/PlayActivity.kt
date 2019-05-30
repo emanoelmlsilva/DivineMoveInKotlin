@@ -55,7 +55,7 @@ class PlayActivity: AppCompatActivity(), View.OnClickListener{
     fun init(){
         fasesDB = RecordController(this)
         this.contLoseLif = 3
-        this.backMainIntent = Intent(this,MainActivity::class.java)
+        this.backMainIntent = Intent(this,FasesActivity::class.java)
         instanceButtons()
         allActionButtonDeleteShowKeyBoard()
         clickButtn()
@@ -201,7 +201,7 @@ class PlayActivity: AppCompatActivity(), View.OnClickListener{
                 this.actualCorrect++
                 snackbarCustom(view,"#FF2BA700","Resposta Certa")
                 this.contScore.changeLevel(this.userWord!!.level)
-                this.contScore.calculateScore(this.chronometer?.getTimefinal()!!)
+                this.contScore.calculateScore()
                 nextDivine()
             }else{
                 snackbarCustom(view,"#AF0000","Resposta Errada")
@@ -287,13 +287,16 @@ class PlayActivity: AppCompatActivity(), View.OnClickListener{
     fun finishAllRandom(){
         if(this.userWord!!.allRandom()) {
 
-            recordAtual = Records(contScore.getScoreFinal(),actualCorrect, this.totalCorrect)
+            if(contScore.getScoreFinal() > 0){
+                recordAtual = Records(contScore.getScoreFinal(),actualCorrect, this.totalCorrect)
 
-            fasesDB?.addRecord(recordAtual)
+                fasesDB?.addRecord(recordAtual)
+            }
             this.chronometer?.stopAndResetChronometer()
             this.alertDialog?.message("todas as imagens foram utilizadas", object : MyDialogMessage.BackToMenu {
                 override fun popBack() {
-                    startActivity(backMainIntent)
+//                    startActivity(backMainIntent)
+                    finish()
                 }
             })
         }
