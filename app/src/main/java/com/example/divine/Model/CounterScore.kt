@@ -1,7 +1,5 @@
 package com.example.divine.Model
 
-import android.util.Log
-
 class CounterScore(var level: Int) {
 
     var contPartial: Int
@@ -18,8 +16,8 @@ class CounterScore(var level: Int) {
         }
     }
 
-    fun calculateScore(temp: Int){
-        contPartial += takeScore() + (temp/3000)
+    fun calculateScore(){
+        contPartial += takeScore()
     }
 
     fun getScoreFinal():Int{
