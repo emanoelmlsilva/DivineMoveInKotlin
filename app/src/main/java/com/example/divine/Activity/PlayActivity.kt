@@ -20,6 +20,7 @@ import kotlinx.android.synthetic.main.activity_play.*
 import kotlinx.android.synthetic.main.heartcont.*
 import kotlinx.android.synthetic.main.keyboardlength24.*
 import java.lang.Exception
+import java.lang.reflect.Type
 
 class PlayActivity: AppCompatActivity(), View.OnClickListener{
 
@@ -102,6 +103,19 @@ class PlayActivity: AppCompatActivity(), View.OnClickListener{
         this.chronometer?.stopAndResetChronometer()
     }
 
+    override fun onBackPressed() {
+        this.alertDialog?.messageCheckExit("Sair",object:MyDialogMessage.BackToMenu{
+            override fun popBack() {
+                startActivity(backMainIntent)
+                finish()
+            }
+        })
+    }
+
+    fun checkVisibilityAnim():Boolean{
+        return lav_android_wave_json.visibility == View.INVISIBLE
+    }
+
     fun instanceButtons(){
 
         this.alertDialog = MyDialogMessage(this,R.style.myalertDialogCustom)
@@ -150,15 +164,19 @@ class PlayActivity: AppCompatActivity(), View.OnClickListener{
 
 //            ball_observe_jump_json.visibility = View.VISIBLE
 //            ball_observe_jump_json.playAnimation()
-            nextDivine()
+            if(checkVisibilityAnim()){
+                nextDivine()
+            }
 //            val thread2 = Thread(myRunnable2)
 //            thread2!!.start()
 
         }
 
         imageDelete.setOnClickListener {
-            alreadyChecked = false
-            deleteSpaceClickButton()
+            if(checkVisibilityAnim()){
+                alreadyChecked = false
+                deleteSpaceClickButton()
+            }
         }
     }
 
@@ -183,9 +201,11 @@ class PlayActivity: AppCompatActivity(), View.OnClickListener{
 
     override fun onClick(view: View?) {
 
-        var buttonAll: Button = view as Button
-        takesWordClickButton(buttonAll.text.toString().toCharArray()[0],buttonAll)
-        checkNameEqualsImage(view)
+        if(checkVisibilityAnim()){
+            var buttonAll: Button = view as Button
+            takesWordClickButton(buttonAll.text.toString().toCharArray()[0],buttonAll)
+            checkNameEqualsImage(view)
+        }
 
     }
 
@@ -350,7 +370,6 @@ class PlayActivity: AppCompatActivity(), View.OnClickListener{
             this.chronometer?.stopAndResetChronometer()
             this.alertDialog?.message("todas as imagens foram utilizadas", object : MyDialogMessage.BackToMenu {
                 override fun popBack() {
-//                    startActivity(backMainIntent)
                     finish()
                 }
             })
