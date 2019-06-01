@@ -5,6 +5,7 @@ import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
+import android.util.Log
 import android.view.View
 import android.widget.*
 import com.example.divine.DialogMessage.MyDialogMessage
@@ -14,11 +15,11 @@ import com.example.divine.Chronometer.MyChronometer
 import com.example.divine.Controller.RecordController
 import com.example.divine.Model.CounterScore
 import com.example.divine.Model.Records
-import com.example.divine.R.drawable.death_star_variant
 import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.activity_play.*
 import kotlinx.android.synthetic.main.heartcont.*
 import kotlinx.android.synthetic.main.keyboardlength24.*
+import java.lang.Exception
 
 class PlayActivity: AppCompatActivity(), View.OnClickListener{
 
@@ -43,12 +44,40 @@ class PlayActivity: AppCompatActivity(), View.OnClickListener{
     var fasesDB: RecordController? = null
     var recordAtual: Records? = null
     var contScore: CounterScore = CounterScore(1)
+    var thread: Thread? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_play)
+
         init()
-        startTime()
+
+        lav_android_wave_json.visibility = View.VISIBLE
+        lav_android_wave_json.playAnimation()
+
+        thread = Thread(myRunnable)
+        thread!!.start()
+
+    }
+
+    val myRunnable = Runnable {
+
+        try {
+            Thread.sleep(10000)
+        } catch (erro: InterruptedException) {
+            erro.printStackTrace()
+        }
+
+        try {
+
+
+            startTime()
+            lav_android_wave_json.visibility = View.INVISIBLE
+            lav_android_wave_json.cancelAnimation()
+
+        }catch (erro: Exception){
+            erro.printStackTrace()
+        }
 
     }
 
@@ -63,7 +92,7 @@ class PlayActivity: AppCompatActivity(), View.OnClickListener{
 
     override fun onResume(){
         super.onResume()
-        this.chronometer!!.backFromStartChronometer()
+        if(this.chronometer!!.timeFinish) this.chronometer!!.backFromStartChronometer()
     }
 
     override fun onPause(){
