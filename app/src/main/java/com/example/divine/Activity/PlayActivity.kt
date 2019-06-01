@@ -35,7 +35,7 @@ class PlayActivity: AppCompatActivity(), View.OnClickListener{
     var actualCorrect: Int = 0
     var actualImage: Int = 0
     val buttonsSelection = IntArray(23)
-    val splash_time_out: Long = 1000
+    val splash_time_out: Long = 100
     var words:CharArray? = null
     var alreadyChecked: Boolean? = null
     var chronometer: MyChronometer? = null
@@ -49,6 +49,8 @@ class PlayActivity: AppCompatActivity(), View.OnClickListener{
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_play)
+
+        ball_observe_jump_json.visibility = View.INVISIBLE
 
         init()
 
@@ -120,7 +122,6 @@ class PlayActivity: AppCompatActivity(), View.OnClickListener{
     }
 
     fun setWordButtonsKeyBoard(){
-
         for(i in 0 until this.listButton!!.size){
 
             this.listButton!![i].text = this.words?.get(i)?.toString()
@@ -143,15 +144,41 @@ class PlayActivity: AppCompatActivity(), View.OnClickListener{
 
     }
 
-    fun clickButtn(){
-        btn_pass.setOnClickListener( {
-            nextDivine()
-        })
+    fun clickButtn(){//onde esta dando erro
 
-        imageDelete.setOnClickListener({
+        btn_pass.setOnClickListener {
+
+//            ball_observe_jump_json.visibility = View.VISIBLE
+//            ball_observe_jump_json.playAnimation()
+            nextDivine()
+//            val thread2 = Thread(myRunnable2)
+//            thread2!!.start()
+
+        }
+
+        imageDelete.setOnClickListener {
             alreadyChecked = false
             deleteSpaceClickButton()
-        })
+        }
+    }
+
+    val myRunnable2 = Runnable {
+
+        try {
+            Thread.sleep(1000)
+        } catch (erro: InterruptedException) {
+            erro.printStackTrace()
+        }
+
+        try {
+            nextDivine()
+            ball_observe_jump_json.visibility = View.INVISIBLE
+            ball_observe_jump_json.cancelAnimation()
+
+        } catch (erro: Exception) {
+            erro.printStackTrace()
+        }
+
     }
 
     override fun onClick(view: View?) {
@@ -163,7 +190,6 @@ class PlayActivity: AppCompatActivity(), View.OnClickListener{
     }
 
     fun setTextAll(){
-
         this.alreadyChecked = false
         this.positionLastWord = 0
         this.positionSelections = 0
@@ -250,12 +276,12 @@ class PlayActivity: AppCompatActivity(), View.OnClickListener{
 
     fun nextDivine(){
         Handler().postDelayed({
-                resetTime()
-                if(contLoseLif > 0){
-                    this.actualImage++
-                    finishAllRandom()
-                    loadingNextImage()
-                }
+            resetTime()
+            if(contLoseLif > 0){
+                this.actualImage++
+                finishAllRandom()
+                loadingNextImage()
+            }
         },splash_time_out)
     }
 
