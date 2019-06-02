@@ -41,7 +41,7 @@ class PlayActivity: AppCompatActivity(), View.OnClickListener{
     var alreadyChecked: Boolean? = null
     var chronometer: MyChronometer? = null
     var alertDialog: MyDialogMessage? = null
-    var backMainIntent: Intent? = null
+//    var backMainIntent: Intent? = null
     var fasesDB: RecordController? = null
     var recordAtual: Records? = null
     var contScore: CounterScore = CounterScore(1)
@@ -87,7 +87,7 @@ class PlayActivity: AppCompatActivity(), View.OnClickListener{
     fun init(){
         fasesDB = RecordController(this)
         this.contLoseLif = 3
-        this.backMainIntent = Intent(this,FasesActivity::class.java)
+//        this.backMainIntent = Intent(this,FasesActivity::class.java)
         instanceButtons()
         allActionButtonDeleteShowKeyBoard()
         clickButtn()
