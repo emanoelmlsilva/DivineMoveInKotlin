@@ -35,7 +35,8 @@ class ChoseWord(var myContext: Context)  {
             }else{
                 lines += "-"
             }
-        }     
+
+        }
         return lines
     }
 
@@ -131,9 +132,4 @@ class ChoseWord(var myContext: Context)  {
     fun size(): Int{
         return this.arrayChose.size
     }
-
-    interface TakeFile{
-        fun getFile():String
-    }
-
 }
