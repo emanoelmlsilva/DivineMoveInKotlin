@@ -106,7 +106,6 @@ class PlayActivity: AppCompatActivity(), View.OnClickListener{
     override fun onBackPressed() {
         this.alertDialog?.messageCheckExit("Sair",object:MyDialogMessage.BackToMenu{
             override fun popBack() {
-                startActivity(backMainIntent)
                 finish()
             }
         })
@@ -352,7 +351,6 @@ class PlayActivity: AppCompatActivity(), View.OnClickListener{
                 override fun popBack() {
 
                     fasesDB?.addRecord(recordAtual)
-                    startActivity(backMainIntent)
                     finish()
                 }
             })
