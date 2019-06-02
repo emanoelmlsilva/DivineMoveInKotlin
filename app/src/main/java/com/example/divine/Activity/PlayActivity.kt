@@ -46,6 +46,7 @@ class PlayActivity: AppCompatActivity(), View.OnClickListener{
     var recordAtual: Records? = null
     var contScore: CounterScore = CounterScore(1)
     var thread: Thread? = null
+    var contJump: Int = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -88,6 +89,7 @@ class PlayActivity: AppCompatActivity(), View.OnClickListener{
         fasesDB = RecordController(this)
         this.contLoseLif = 3
 //        this.backMainIntent = Intent(this,FasesActivity::class.java)
+        this.contJump = 3
         instanceButtons()
         allActionButtonDeleteShowKeyBoard()
         clickButtn()
@@ -163,7 +165,8 @@ class PlayActivity: AppCompatActivity(), View.OnClickListener{
 
 //            ball_observe_jump_json.visibility = View.VISIBLE
 //            ball_observe_jump_json.playAnimation()
-            if(checkVisibilityAnim()){
+            if(checkVisibilityAnim() && checkButtonPass()){
+                useButtonPass()
                 nextDivine()
             }
 //            val thread2 = Thread(myRunnable2)
@@ -179,24 +182,24 @@ class PlayActivity: AppCompatActivity(), View.OnClickListener{
         }
     }
 
-    val myRunnable2 = Runnable {
-
-        try {
-            Thread.sleep(1000)
-        } catch (erro: InterruptedException) {
-            erro.printStackTrace()
-        }
-
-        try {
-            nextDivine()
-            ball_observe_jump_json.visibility = View.INVISIBLE
-            ball_observe_jump_json.cancelAnimation()
-
-        } catch (erro: Exception) {
-            erro.printStackTrace()
-        }
-
-    }
+//    val myRunnable2 = Runnable {
+//
+//        try {
+//            Thread.sleep(1000)
+//        } catch (erro: InterruptedException) {
+//            erro.printStackTrace()
+//        }
+//
+//        try {
+//            nextDivine()
+//            ball_observe_jump_json.visibility = View.INVISIBLE
+//            ball_observe_jump_json.cancelAnimation()
+//
+//        } catch (erro: Exception) {
+//            erro.printStackTrace()
+//        }
+//
+//    }
 
     override fun onClick(view: View?) {
 
@@ -208,6 +211,14 @@ class PlayActivity: AppCompatActivity(), View.OnClickListener{
 
     }
 
+    fun useButtonPass(){
+        if(this.contJump > 0) this.contJump--
+    }
+
+    fun checkButtonPass(): Boolean{
+        return this.contJump > 0
+    }
+
     fun setTextAll(){
         this.alreadyChecked = false
         this.positionLastWord = 0
@@ -217,7 +228,7 @@ class PlayActivity: AppCompatActivity(), View.OnClickListener{
         this.textContPoint.text = "${this.actualImage}/${this.totalCorrect}"
         words = userWord?.choseWordKeyboard()
         this.imageMoveAtual.setImageResource(this.userWord?.image!!)
-        this.btn_pass
+        this.btn_pass.text = this.contJump.toString()
         this.setWordButtonsKeyBoard()
     }
 
