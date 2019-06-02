@@ -20,6 +20,7 @@ import kotlinx.android.synthetic.main.activity_play.*
 import kotlinx.android.synthetic.main.heartcont.*
 import kotlinx.android.synthetic.main.keyboardlength24.*
 import java.lang.Exception
+import java.lang.reflect.Type
 
 class PlayActivity: AppCompatActivity(), View.OnClickListener{
 
@@ -35,12 +36,12 @@ class PlayActivity: AppCompatActivity(), View.OnClickListener{
     var actualCorrect: Int = 0
     var actualImage: Int = 0
     val buttonsSelection = IntArray(23)
-    val splash_time_out: Long = 1000
+    val splash_time_out: Long = 100
     var words:CharArray? = null
     var alreadyChecked: Boolean? = null
     var chronometer: MyChronometer? = null
     var alertDialog: MyDialogMessage? = null
-    var backMainIntent: Intent? = null
+//    var backMainIntent: Intent? = null
     var fasesDB: RecordController? = null
     var recordAtual: Records? = null
     var contScore: CounterScore = CounterScore(1)
@@ -49,6 +50,8 @@ class PlayActivity: AppCompatActivity(), View.OnClickListener{
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_play)
+
+        ball_observe_jump_json.visibility = View.INVISIBLE
 
         init()
 
@@ -84,7 +87,7 @@ class PlayActivity: AppCompatActivity(), View.OnClickListener{
     fun init(){
         fasesDB = RecordController(this)
         this.contLoseLif = 3
-        this.backMainIntent = Intent(this,FasesActivity::class.java)
+//        this.backMainIntent = Intent(this,FasesActivity::class.java)
         instanceButtons()
         allActionButtonDeleteShowKeyBoard()
         clickButtn()
@@ -98,6 +101,18 @@ class PlayActivity: AppCompatActivity(), View.OnClickListener{
     override fun onPause(){
         super.onPause()
         this.chronometer?.stopAndResetChronometer()
+    }
+
+    override fun onBackPressed() {
+        this.alertDialog?.messageCheckExit("Sair",object:MyDialogMessage.BackToMenu{
+            override fun popBack() {
+                finish()
+            }
+        })
+    }
+
+    fun checkVisibilityAnim():Boolean{
+        return lav_android_wave_json.visibility == View.INVISIBLE
     }
 
     fun instanceButtons(){
@@ -120,7 +135,6 @@ class PlayActivity: AppCompatActivity(), View.OnClickListener{
     }
 
     fun setWordButtonsKeyBoard(){
-
         for(i in 0 until this.listButton!!.size){
 
             this.listButton!![i].text = this.words?.get(i)?.toString()
@@ -143,27 +157,58 @@ class PlayActivity: AppCompatActivity(), View.OnClickListener{
 
     }
 
-    fun clickButtn(){
-        btn_pass.setOnClickListener( {
-            nextDivine()
-        })
+    fun clickButtn(){//onde esta dando erro
 
-        imageDelete.setOnClickListener({
-            alreadyChecked = false
-            deleteSpaceClickButton()
-        })
+        btn_pass.setOnClickListener {
+
+//            ball_observe_jump_json.visibility = View.VISIBLE
+//            ball_observe_jump_json.playAnimation()
+            if(checkVisibilityAnim()){
+                nextDivine()
+            }
+//            val thread2 = Thread(myRunnable2)
+//            thread2!!.start()
+
+        }
+
+        imageDelete.setOnClickListener {
+            if(checkVisibilityAnim()){
+                alreadyChecked = false
+                deleteSpaceClickButton()
+            }
+        }
+    }
+
+    val myRunnable2 = Runnable {
+
+        try {
+            Thread.sleep(1000)
+        } catch (erro: InterruptedException) {
+            erro.printStackTrace()
+        }
+
+        try {
+            nextDivine()
+            ball_observe_jump_json.visibility = View.INVISIBLE
+            ball_observe_jump_json.cancelAnimation()
+
+        } catch (erro: Exception) {
+            erro.printStackTrace()
+        }
+
     }
 
     override fun onClick(view: View?) {
 
-        var buttonAll: Button = view as Button
-        takesWordClickButton(buttonAll.text.toString().toCharArray()[0],buttonAll)
-        checkNameEqualsImage(view)
+        if(checkVisibilityAnim()){
+            var buttonAll: Button = view as Button
+            takesWordClickButton(buttonAll.text.toString().toCharArray()[0],buttonAll)
+            checkNameEqualsImage(view)
+        }
 
     }
 
     fun setTextAll(){
-
         this.alreadyChecked = false
         this.positionLastWord = 0
         this.positionSelections = 0
@@ -250,12 +295,12 @@ class PlayActivity: AppCompatActivity(), View.OnClickListener{
 
     fun nextDivine(){
         Handler().postDelayed({
-                resetTime()
-                if(contLoseLif > 0){
-                    this.actualImage++
-                    finishAllRandom()
-                    loadingNextImage()
-                }
+            resetTime()
+            if(contLoseLif > 0){
+                this.actualImage++
+                finishAllRandom()
+                loadingNextImage()
+            }
         },splash_time_out)
     }
 
@@ -306,7 +351,6 @@ class PlayActivity: AppCompatActivity(), View.OnClickListener{
                 override fun popBack() {
 
                     fasesDB?.addRecord(recordAtual)
-                    startActivity(backMainIntent)
                     finish()
                 }
             })
@@ -324,7 +368,6 @@ class PlayActivity: AppCompatActivity(), View.OnClickListener{
             this.chronometer?.stopAndResetChronometer()
             this.alertDialog?.message("todas as imagens foram utilizadas", object : MyDialogMessage.BackToMenu {
                 override fun popBack() {
-//                    startActivity(backMainIntent)
                     finish()
                 }
             })

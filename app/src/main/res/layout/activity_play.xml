@@ -80,6 +80,7 @@
             app:layout_constraintStart_toStartOf="parent" android:layout_marginLeft="16dp"
             android:layout_marginStart="16dp" app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginRight="16dp" android:layout_marginEnd="16dp"/>
+
     <Button
             android:layout_width="51dp"
             android:layout_height="47dp"
@@ -92,18 +93,36 @@
             app:icon="@drawable/ic_arrow_forward_black_24dp" android:background="@android:color/transparent"
             app:layout_constraintVertical_bias="0.48000002"/>
 
+
     <com.airbnb.lottie.LottieAnimationView
             android:id="@+id/lav_android_wave_json"
-            android:layout_width="395dp"
-            android:layout_height="716dp"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
             app:lottie_autoPlay="false"
             app:lottie_fileName="lottie/time.json"
-            app:lottie_loop="true" android:layout_marginEnd="8dp" app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginRight="8dp" android:layout_marginStart="8dp"
-            app:layout_constraintStart_toStartOf="@+id/imageView3" android:layout_marginLeft="8dp"
-            app:layout_constraintTop_toTopOf="parent" android:layout_marginBottom="8dp"
-            app:layout_constraintBottom_toBottomOf="@+id/imageView3" android:layout_marginTop="8dp"
-            android:background="@android:color/transparent"/>
+            app:lottie_loop="true"
+            app:layout_constraintStart_toStartOf="parent" android:layout_marginLeft="32dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginRight="32dp"
+            android:background="@android:color/transparent"
+            android:layout_marginEnd="32dp" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/include"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout2" android:layout_marginTop="32dp"
+            android:layout_marginBottom="32dp"/>
+
+    <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/ball_observe_jump_json"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:lottie_autoPlay="false"
+            app:lottie_fileName="lottie/pass(ball)l.json"
+            app:lottie_loop="true" android:layout_marginEnd="32dp" app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginRight="32dp"
+            android:background="@android:color/transparent" android:layout_marginStart="32dp"
+            app:layout_constraintStart_toStartOf="parent" android:layout_marginLeft="32dp"
+            app:layout_constraintBottom_toTopOf="@+id/include" android:layout_marginTop="32dp"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout2" android:layout_marginBottom="32dp"
+    />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
